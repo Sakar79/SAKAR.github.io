@@ -121,20 +121,19 @@
   <h2 class="w3-text-grey">My Portfolio</h2>
   <hr class="w3-opacity">
 
-  <!-- Grid for photos -->
   <div class="w3-row-padding" style="margin:0 -16px">
     <div class="w3-half">
       <!-- First Photo: Street Photography -->
       <a href="street-photography.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
-          <div class="hover-text">Street Photography</div>
+          <div class="hover-text"><span>Street</span><br><span>Photography</span></div>
         </div>
       </a>
 
       <!-- Second Photo: Portraits -->
       <a href="portraits.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
           <div class="hover-text">Portraits</div>
         </div>
@@ -142,9 +141,9 @@
 
       <!-- Third Photo: Food Photography -->
       <a href="food-photography.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
-          <div class="hover-text">Food Photography</div>
+          <div class="hover-text"><span>Food</span><br><span>Photography</span></div>
         </div>
       </a>
     </div>
@@ -152,15 +151,15 @@
     <div class="w3-half">
       <!-- Fourth Photo: Work Shoot -->
       <a href="work-shoot.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
-          <div class="hover-text">Work Shoot</div>
+          <div class="hover-text"><span>Work</span><br><span>Shoot</span></div>
         </div>
       </a>
 
       <!-- Fifth Photo: Photoshop -->
       <a href="photoshop.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
           <div class="hover-text">Photoshop</div>
         </div>
@@ -168,9 +167,9 @@
 
       <!-- Sixth Photo: Wildlife Photography -->
       <a href="wildlife-photography.html" class="photo-link">
-        <div class="photo-container">
+        <div class="photo-container" onclick="toggleText(this)">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
-          <div class="hover-text">Wildlife Photography</div>
+          <div class="hover-text"><span>Wildlife</span><br><span>Photography</span></div>
         </div>
       </a>
     </div>
@@ -180,7 +179,6 @@
 <style>
   .photo-container {
     position: relative;
-    width: 100%;
     cursor: pointer;
     overflow: hidden;
   }
@@ -190,42 +188,53 @@
     transition: opacity 0.3s;
   }
 
-  .photo-container .hover-text {
+  .hover-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
+    text-align: center;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transition: opacity 0.3s, font-size 0.3s;
-    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    line-height: 1.2;
   }
 
-  .photo-container:hover .hover-text,
-  .photo-container:active .hover-text {
+  .photo-container:hover .hover-text {
     opacity: 1;
   }
 
-  .photo-container:hover img,
-  .photo-container:active img {
-    opacity: 0.85;
+  .photo-container.active .hover-text {
+    opacity: 1;
   }
 
+  /* Mobile Styles */
   @media (max-width: 768px) {
-    .photo-container .hover-text {
-      font-size: 28px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .photo-container .hover-text {
-      font-size: 32px;
+    .hover-text {
+      font-size: 18px;
     }
   }
 </style>
+
+<script>
+  function toggleText(container) {
+    const isActive = container.classList.contains("active");
+
+    // Remove "active" class from all containers
+    document.querySelectorAll(".photo-container").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    // Toggle the clicked container
+    if (!isActive) {
+      container.classList.add("active");
+    }
+  }
+</script>
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
     <h2>About</h2>
