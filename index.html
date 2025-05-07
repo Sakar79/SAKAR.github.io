@@ -117,27 +117,69 @@
 </header>
 
   <!-- Portfolio Section -->
-  <div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="w3-text-grey">My Portfolio</h2>
-    <hr class="w3-opacity">
+<div class="w3-padding-32 w3-content" id="portfolio">
+  <h2 class="w3-text-grey">My Portfolio</h2>
+  <hr class="w3-opacity">
 
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
-      </div>
+  <!-- Grid for photos -->
+  <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-half">
+      <!-- First Photo with Hover Effect and Link -->
+      <a href="street-photography.html" class="photo-link">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
+          <div class="hover-text">Street Photography</div>
+        </div>
+      </a>
 
-      <div class="w3-half">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
-      </div>
-    <!-- End photo grid -->
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
     </div>
-  <!-- End Portfolio Section -->
+
+    <div class="w3-half">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
+    </div>
   </div>
+  <!-- End photo grid -->
+</div>
+
+<style>
+  .photo-container {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .photo-container img {
+    width: 100%;
+    transition: opacity 0.3s;
+  }
+
+  .photo-container .hover-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+
+  .photo-container:hover .hover-text {
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+  }
+
+  .photo-container:hover img {
+    opacity: 0.9;
+  }
+</style>
 
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
