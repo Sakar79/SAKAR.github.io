@@ -21,7 +21,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-        transition: opacity 2s ease;  /* Slower fade duration */
+        transition: opacity 2s ease;
         opacity: 1;
       }
     </style>
@@ -51,15 +51,25 @@
           if (index !== currentIndex && index < totalImages) {
             currentIndex = index;
 
-            // Fade out
-            bgimg.style.opacity = 0;
-
-            setTimeout(() => {
-              bgimg.style.backgroundImage = `url('${images[currentIndex]}')`;
-
-              // Fade in
+            // If scrolling up to the first image, no fade-in
+            if (index === 0) {
+              bgimg.style.transition = "none"; // Disable transition for the first image
               bgimg.style.opacity = 1;
-            }, 1000);  // 1000ms matches the fade-out duration
+              bgimg.style.backgroundImage = `url('${images[currentIndex]}')`;
+              
+              // Re-enable the transition for subsequent images
+              setTimeout(() => {
+                bgimg.style.transition = "opacity 2s ease";
+              }, 50);
+            } else {
+              // Fade-out and fade-in for other images
+              bgimg.style.opacity = 0;
+
+              setTimeout(() => {
+                bgimg.style.backgroundImage = `url('${images[currentIndex]}')`;
+                bgimg.style.opacity = 1;
+              }, 1000); // 1000ms matches the fade-out duration
+            }
           }
         });
       });
