@@ -125,7 +125,7 @@
     <div class="w3-half">
       <!-- First Photo: Street Photography -->
       <a href="street-photography.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
           <div class="hover-text"><span>Street</span><br><span>Photography</span></div>
         </div>
@@ -133,7 +133,7 @@
 
       <!-- Second Photo: Portraits -->
       <a href="portraits.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
           <div class="hover-text">Portraits</div>
         </div>
@@ -141,7 +141,7 @@
 
       <!-- Third Photo: Food Photography -->
       <a href="food-photography.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
           <div class="hover-text"><span>Food</span><br><span>Photography</span></div>
         </div>
@@ -151,7 +151,7 @@
     <div class="w3-half">
       <!-- Fourth Photo: Work Shoot -->
       <a href="work-shoot.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
           <div class="hover-text"><span>Work</span><br><span>Shoot</span></div>
         </div>
@@ -159,7 +159,7 @@
 
       <!-- Fifth Photo: Photoshop -->
       <a href="photoshop.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
           <div class="hover-text">Photoshop</div>
         </div>
@@ -167,7 +167,7 @@
 
       <!-- Sixth Photo: Wildlife Photography -->
       <a href="wildlife-photography.html" class="photo-link">
-        <div class="photo-container" onclick="toggleText(this)">
+        <div class="photo-container w3-card w3-hover-shadow">
           <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
           <div class="hover-text"><span>Wildlife</span><br><span>Photography</span></div>
         </div>
@@ -181,11 +181,17 @@
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    margin-bottom: 16px;
+    transition: box-shadow 0.3s;
   }
 
   .photo-container img {
     width: 100%;
-    transition: opacity 0.3s;
+    transition: transform 0.3s;
+  }
+
+  .photo-container:hover img {
+    transform: scale(1.02);
   }
 
   .hover-text {
@@ -224,12 +230,10 @@
   function toggleText(container) {
     const isActive = container.classList.contains("active");
 
-    // Remove "active" class from all containers
     document.querySelectorAll(".photo-container").forEach(item => {
       item.classList.remove("active");
     });
 
-    // Toggle the clicked container
     if (!isActive) {
       container.classList.add("active");
     }
