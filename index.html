@@ -166,9 +166,10 @@
     font-size: 24px;
     font-weight: bold;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Slight shadow for clarity */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: opacity 0.3s;
+    white-space: nowrap; /* Prevents line break */
   }
 
   .photo-container:hover .hover-text {
@@ -176,7 +177,7 @@
   }
 
   .photo-container:hover img {
-    opacity: 0.85; /* Slight fade to make text stand out */
+    opacity: 0.85;
   }
 </style>
 
