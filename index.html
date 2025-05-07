@@ -16,13 +16,18 @@
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100%;
-        transition: background-image 0.5s ease;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: background-image 1s ease-in-out;
       }
     </style>
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const bgimg = document.querySelector(".bgimg");
+
         const images = [
           "https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg",
           "https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg",
@@ -30,11 +35,18 @@
           "https://www.w3schools.com/w3images/wedding.jpg"
         ];
 
+        let currentIndex = 0;
+        const totalImages = images.length;
+        const scrollInterval = window.innerHeight / 2;
+
         window.addEventListener("scroll", function() {
           const scrollY = window.scrollY;
-          const windowHeight = window.innerHeight;
-          const index = Math.floor(scrollY / windowHeight) % images.length;
-          bgimg.style.backgroundImage = `url('${images[index]}')`;
+          const index = Math.floor(scrollY / scrollInterval) % totalImages;
+
+          if (index !== currentIndex) {
+            currentIndex = index;
+            bgimg.style.backgroundImage = `url('${images[currentIndex]}')`;
+          }
         });
       });
     </script>
