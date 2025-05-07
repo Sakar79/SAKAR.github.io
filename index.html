@@ -121,59 +121,79 @@
   <h2 class="w3-text-grey">My Portfolio</h2>
   <hr class="w3-opacity">
 
+  <style>
+    .portfolio-item {
+      background-color: transparent !important;
+      box-shadow: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 1.2;
+      pointer-events: none; /* Prevents click interference */
+    }
+
+    .portfolio-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  </style>
+
+  <!-- Grid for photos -->
   <div class="w3-row-padding" style="margin:0 -16px">
     <div class="w3-half">
-      <!-- First Photo: Street Photography -->
-      <a href="street-photography.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
-          <div class="hover-text"><span>Street</span><br><span>Photography</span></div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg">
+        <div class="portfolio-overlay">Street<br>Photography</div>
+      </div>
 
-      <!-- Second Photo: Portraits -->
-      <a href="portraits.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
-          <div class="hover-text">Portraits</div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg">
+        <div class="portfolio-overlay">Portraits</div>
+      </div>
 
-      <!-- Third Photo: Food Photography -->
-      <a href="food-photography.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
-          <div class="hover-text"><span>Food</span><br><span>Photography</span></div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg">
+        <div class="portfolio-overlay">Food<br>Photography</div>
+      </div>
     </div>
 
     <div class="w3-half">
-      <!-- Fourth Photo: Work Shoot -->
-      <a href="work-shoot.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
-          <div class="hover-text"><span>Work</span><br><span>Shoot</span></div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg">
+        <div class="portfolio-overlay">Work<br>Shoot</div>
+      </div>
 
-      <!-- Fifth Photo: Photoshop -->
-      <a href="photoshop.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
-          <div class="hover-text">Photoshop</div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg">
+        <div class="portfolio-overlay">Photoshop</div>
+      </div>
 
-      <!-- Sixth Photo: Wildlife Photography -->
-      <a href="wildlife-photography.html" class="photo-link">
-        <div class="photo-container w3-card w3-hover-shadow">
-          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
-          <div class="hover-text"><span>Wildlife</span><br><span>Photography</span></div>
-        </div>
-      </a>
+      <div class="portfolio-container portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg">
+        <div class="portfolio-overlay">Wildlife<br>Photography</div>
+      </div>
     </div>
   </div>
+  <!-- End Portfolio Section -->
 </div>
 
 <style>
