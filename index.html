@@ -175,7 +175,6 @@
       </a>
     </div>
   </div>
-  <!-- End photo grid -->
 </div>
 
 <style>
@@ -199,18 +198,32 @@
     font-size: 24px;
     font-weight: bold;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap; /* Prevents line break */
+    transition: opacity 0.3s, font-size 0.3s;
+    white-space: nowrap;
   }
 
-  .photo-container:hover .hover-text {
+  .photo-container:hover .hover-text,
+  .photo-container:active .hover-text {
     opacity: 1;
   }
 
-  .photo-container:hover img {
+  .photo-container:hover img,
+  .photo-container:active img {
     opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    .photo-container .hover-text {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .photo-container .hover-text {
+      font-size: 32px;
+    }
   }
 </style>
   <!-- About Section -->
