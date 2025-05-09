@@ -4,126 +4,106 @@
     <title>Sakar's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
     <style>
         body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Montserrat", sans-serif;
-        }
-
-        .bgimg {
-            background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-            min-height: 100vh;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-
-        .intro-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333;
+            background-color: transparent;
             display: flex;
             justify-content: center;
             padding: 15px 0;
             z-index: 1000;
+            transition: background-color 0.4s;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(50, 50, 50, 0.9);
         }
 
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 30px;
             font-size: 16px;
-            transition: font-weight 0.3s;
+            padding: 8px 16px;
+            background-color: rgba(50, 50, 50, 0.5);
+            border-radius: 5px;
+            transition: background-color 0.3s, font-weight 0.3s;
         }
 
         .navbar a:hover, .navbar a:focus {
-            font-weight: bold;
+            background-color: rgba(50, 50, 50, 0.7);
+            font-weight: 600;
         }
 
-        .portfolio-heading, .pricing-heading, .contact-heading {
-            font-size: 32px;
+        .bgimg {
+            background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
             text-align: center;
-            margin: 60px 0;
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .intro-heading {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section-heading {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 80px;
             color: #333;
         }
 
-        .photo-container {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 24px;
-            padding: 5px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: transform 0.6s ease, opacity 0.6s ease;
-        }
-
-        .photo-container.active {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .photo-container img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .hover-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .photo-container:hover .hover-text {
-            opacity: 1;
-        }
-
-        .premium-package {
-            background-color: #333;
-            color: white;
+        .content-section {
+            padding: 60px 20px;
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 10px 0;
+            .navbar a {
+                margin: 0 15px;
+                padding: 6px 12px;
             }
 
-            .bgimg {
-                min-height: 70vh;
+            .intro-container {
+                padding: 30px;
+                max-width: 90%;
+            }
+
+            .intro-heading {
+                font-size: 24px;
             }
 
             .intro-text {
-                font-size: 24px;
+                font-size: 16px;
             }
         }
     </style>
@@ -131,89 +111,65 @@
 <body>
 
 <!-- Navbar -->
-<div class="navbar">
+<div class="navbar" id="navbar">
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
     <a href="#pricing">Pricing</a>
 </div>
 
-<!-- Background Image with Intro Text -->
+<!-- Introduction Section -->
 <div class="bgimg">
-    <div class="intro-text">Hi, I'm Sakar Panta. I capture stories through my lens.</div>
-</div>
-
-<!-- Portfolio Section -->
-<div class="w3-padding-32 w3-content" id="portfolio">
-    <h2 class="portfolio-heading">My Portfolio</h2>
-    <hr class="w3-opacity">
-    <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-            <div class="photo-container">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg">
-                <div class="hover-text">Street Photography</div>
-            </div>
-            <div class="photo-container">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg">
-                <div class="hover-text">Portraits</div>
-            </div>
-        </div>
-        <div class="w3-half">
-            <div class="photo-container">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg">
-                <div class="hover-text">Food Photography</div>
-            </div>
-            <div class="photo-container">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg">
-                <div class="hover-text">Work Shoot</div>
-            </div>
+    <div class="intro-container">
+        <div class="intro-heading">Hi, I'm Sakar Panta</div>
+        <div class="intro-text">
+            I am a visual storyteller capturing the essence of moments through photography. 
+            From street photography to captivating portraits, my work aims to narrate compelling stories with each shot.
         </div>
     </div>
 </div>
 
-<!-- Pricing Section -->
-<div class="w3-padding-32 w3-content" id="pricing">
-    <h2 class="pricing-heading">Pricing</h2>
-    <div class="w3-row">
-        <div class="w3-half w3-center">
-            <div class="w3-card">
-                <h3>Basic</h3>
-                <p>$10 per month</p>
-            </div>
+<!-- Portfolio Section -->
+<div class="content-section" id="portfolio">
+    <h2 class="section-heading">My Portfolio</h2>
+    <div class="gallery-grid">
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
         </div>
-        <div class="w3-half w3-center premium-package">
-            <div class="w3-card">
-                <h3>Premium</h3>
-                <p>$25 per month</p>
-            </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+        </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+        </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
         </div>
     </div>
 </div>
 
 <!-- Contact Section -->
-<div class="w3-padding-32 w3-content" id="contact">
-    <h2 class="contact-heading">Contact</h2>
-    <p class="w3-center">Email: sakarpanta2002@gmail.com</p>
-    <p class="w3-center">Phone: (+61) 04 16964722</p>
+<div class="content-section" id="contact">
+    <h2 class="section-heading">Contact</h2>
+    <p>Email: sakarpanta2002@gmail.com</p>
+    <p>Phone: (+61) 04 16964722</p>
 </div>
 
-<!-- Scroll Animation Script -->
+<!-- Pricing Section -->
+<div class="content-section" id="pricing">
+    <h2 class="section-heading">Pricing</h2>
+    <p>Basic Package: $10/month</p>
+    <p>Premium Package: $25/month</p>
+</div>
+
 <script>
-    const photos = document.querySelectorAll('.photo-container');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            } else {
-                entry.target.classList.remove('active');
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-
-    photos.forEach(photo => {
-        observer.observe(photo);
+    // Scroll Animation for Navbar
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 </script>
 
