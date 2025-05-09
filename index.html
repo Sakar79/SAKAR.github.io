@@ -1,250 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sakar's Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
-    <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Poppins", sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakar Panta | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: transparent;
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            z-index: 1000;
-            transition: background-color 0.4s;
-        }
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f4f4;
+    }
 
-        .navbar.scrolled {
-            background-color: rgba(50, 50, 50, 0.9);
-        }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
-            padding: 8px 16px;
-            transition: font-weight 0.3s, background-color 0.3s;
-        }
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
 
-        .navbar a:hover, .navbar a:focus {
-            font-weight: 600;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-        }
+    .header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-        .bgimg {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-            background-size: cover;
-            background-position: center;
-            animation: bgAnimate 15s infinite alternate ease-in-out;
-        }
+    .header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
 
-        @keyframes bgAnimate {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+    .hero {
+      background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      text-align: center;
+      color: #fff;
+    }
 
-        .intro-container {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            color: #fff;
-            width: 80%;
-            max-width: 600px;
-        }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
 
-        .intro-heading {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+    .hero .btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
 
-        .intro-text {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+    .hero .btn:hover {
+      background-color: #555;
+    }
 
-        .content-section {
-            padding: 50px 0;
-            text-align: center;
-        }
+    .services, .portfolio, .contact {
+      padding: 50px 0;
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
 
-        .portfolio-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
+    .services h2, .portfolio h2, .contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
 
-        .photo-container {
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.5s ease;
-        }
+    .service, .portfolio-item {
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 15px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
 
-        .photo-container img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s ease;
-        }
+    .service:hover, .portfolio-item:hover {
+      background-color: #ddd;
+    }
 
-        .photo-title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .photo-container:hover .photo-title {
-            opacity: 1;
-        }
+    .contact input, .contact textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
 
-        .pricing, .contact {
-            padding: 50px 0;
-            background-color: #fff;
-            margin-bottom: 20px;
-        }
+    .contact .btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
 
-        .pricing h2, .contact h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .pricing .price-item, .contact form {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            margin-bottom: 15px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .price-item:hover, .contact form:hover {
-            background-color: #ddd;
-        }
-
-        .contact input, .contact textarea {
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-        }
-
-        .contact .btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s;
-        }
-
-        .contact .btn:hover {
-            background-color: #555;
-        }
-
-        @media (max-width: 768px) {
-            .navbar a {
-                margin: 0 10px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    .contact .btn:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="navbar" id="navbar">
-    <a href="#portfolio">Portfolio</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<!-- Background Section -->
-<div class="bgimg">
-    <div class="intro-container">
-        <div class="intro-heading">Capturing Moments, Creating Stories</div>
-        <div class="intro-text">Photography | Web Design | Visual Storytelling</div>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">Sakar Panta</div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</div>
+  </header>
 
-<!-- Portfolio Section -->
-<div class="content-section" id="portfolio">
-    <h2 class="section-heading">My Portfolio</h2>
-    <div class="portfolio-grid">
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-            <div class="photo-title">Street Photography</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-            <div class="photo-title">Portraits</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-            <div class="photo-title">Food Photography</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-            <div class="photo-title">Work Shoot</div>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Capturing Moments, Creating Stories</h1>
+      <p>Photography | Web Design | Visual Storytelling</p>
+      <a href="#contact" class="btn">Book Now</a>
     </div>
-</div>
+  </section>
 
-<!-- Pricing Section -->
-<div class="pricing" id="pricing">
-    <h2>Pricing</h2>
-    <div class="price-item">Photography Package - $300</div>
-    <div class="price-item">Web Design Package - $500</div>
-    <div class="price-item">Visual Storytelling Package - $400</div>
-</div>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>My Services</h2>
+      <div class="service">Photography</div>
+      <div class="service">Web Design</div>
+      <div class="service">Visual Storytelling</div>
+    </div>
+  </section>
 
-<!-- Contact Section -->
-<div class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <form>
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>My Portfolio</h2>
+      <div class="portfolio-item">Street Photography</div>
+      <div class="portfolio-item">Portraits</div>
+      <div class="portfolio-item">Food Photography</div>
+      <div class="portfolio-item">Work Shoot</div>
+      <div class="portfolio-item">Photoshop</div>
+      <div class="portfolio-item">Wildlife Photography</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message" required></textarea>
         <button type="submit" class="btn">Send Message</button>
-    </form>
-</div>
+      </form>
+    </div>
+  </section>
 
-<script>
-    window.addEventListener('scroll', function() {
-        const navbar = document.getElementById('navbar');
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroButton = document.querySelector(".hero .btn");
+      heroButton.addEventListener("click", function () {
+        alert("Thank you for your interest! Please contact me through the form.");
+      });
     });
-</script>
+  </script>
 
 </body>
 </html>
