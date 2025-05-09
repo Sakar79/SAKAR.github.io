@@ -49,6 +49,12 @@
             background-attachment: fixed;
             position: relative;
             overflow: hidden;
+            filter: blur(0px); /* Prevent blur */
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .bgimg:hover {
+            filter: none; /* Optional, adds hover effect for sharpened background */
         }
 
         .intro-container {
@@ -56,12 +62,12 @@
             top: 25%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px 30px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
             max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.5); /* Keeps original background */
         }
 
         .intro-heading {
