@@ -4,13 +4,12 @@
     <title>Sakar's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <style>
-        body, html {
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
-            font-family: "Poppins", sans-serif;
-            overflow-x: hidden;
         }
 
         .navbar {
@@ -44,80 +43,61 @@
             border-radius: 5px;
         }
 
-        .hero {
+        .bgimg {
             position: relative;
-            width: 100%;
             height: 100vh;
             background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
             background-size: cover;
             background-position: center;
+            animation: bgAnimate 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgAnimate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .intro-container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
             color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 80%;
+            max-width: 600px;
         }
 
-        .hero .content {
-            z-index: 1;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 0;
-        }
-
-        .hero h1 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 36px;
+        .intro-heading {
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
         }
 
-        .hero p {
+        .intro-text {
             font-size: 16px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero .btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero .btn:hover {
-            background-color: #555;
+            line-height: 1.6;
         }
 
         .content-section {
             padding: 50px 0;
-            background-color: #fff;
+            text-align: center;
         }
 
         .portfolio-grid {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             gap: 30px;
-            justify-content: center;
         }
 
         .photo-container {
-            width: calc(33.333% - 20px);
-            max-width: 300px;
+            width: 80%;
+            max-width: 600px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -149,6 +129,13 @@
         .download-section, .pricing, .contact {
             padding: 50px 0;
             background-color: #fff;
+        }
+
+        .download-section h2, .pricing h2, .contact h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .download-section .btn-download {
@@ -212,21 +199,21 @@
 
 <!-- Navbar -->
 <div class="navbar" id="navbar">
-    <a href="#hero">Home</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
     <a href="#pricing">Pricing</a>
     <a href="#download">Download</a>
-    <a href="#contact">Contact</a>
 </div>
 
-<!-- Hero Section -->
-<section class="hero" id="hero">
-    <div class="content">
-        <h1>Capturing Moments, Creating Stories</h1>
-        <p>Photography | Web Design | Visual Storytelling</p>
-        <a href="#contact" class="btn">Book Now</a>
+<!-- Background Section -->
+<div class="bgimg">
+    <div class="intro-container">
+        <div class="intro-heading">Hi, I'm Sakar Panta</div>
+        <div class="intro-text">
+            Photographer & Web Designer. Capturing moments that tell stories. Let's create something amazing together.
+        </div>
     </div>
-</section>
+</div>
 
 <!-- Portfolio Section -->
 <div class="content-section" id="portfolio">
@@ -239,14 +226,6 @@
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
             <div class="photo-title">Portraits</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-            <div class="photo-title">Food Photography</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-            <div class="photo-title">Work Shoot</div>
         </div>
     </div>
 </div>
