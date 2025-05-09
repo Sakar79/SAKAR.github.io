@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Sakar Panta | Photographer & Web Designer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>SAKAR PANTA | Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -38,7 +38,6 @@
     .logo {
       font-size: 24px;
       font-weight: 600;
-      letter-spacing: 1px;
     }
 
     .header nav a {
@@ -56,31 +55,17 @@
 
     .hero {
       height: 100vh;
+      background: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg') center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-      animation: zoomIn 1.5s ease;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-
-    .hero-content {
-      z-index: 2;
       text-align: center;
+      animation: zoomIn 1.5s ease;
     }
 
     .hero h1 {
       font-size: 56px;
+      color: #ff005c;
       animation: fadeInUp 1.2s ease;
     }
 
@@ -97,17 +82,15 @@
       cursor: pointer;
       font-size: 18px;
       color: #fff;
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s;
     }
 
     .hero .btn:hover {
       background-color: #e60052;
-      transform: scale(1.05);
     }
 
     .section {
-      padding: 100px 0;
-      animation: fadeIn 1s ease;
+      padding: 80px 0;
     }
 
     .section h2 {
@@ -129,7 +112,6 @@
       background-color: #333;
       cursor: pointer;
       transition: transform 0.4s;
-      animation: slideInUp 1s ease;
     }
 
     .portfolio-item img {
@@ -168,6 +150,15 @@
       font-weight: bold;
     }
 
+    .contact, .pricing {
+      background-color: #1e1e1e;
+      padding: 80px 0;
+    }
+
+    .contact .container, .pricing .container {
+      text-align: center;
+    }
+
     .footer {
       background-color: #222;
       padding: 50px;
@@ -180,11 +171,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @keyframes zoomIn {
       from { transform: scale(1.1); }
       to { transform: scale(1); }
@@ -194,46 +180,24 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .hero .btn {
-        padding: 10px 30px;
-        font-size: 16px;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header nav a {
-        padding: 8px 12px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <div class="header container">
-    <div class="logo">Sakar Panta</div>
+    <div class="logo">SAKAR PANTA</div>
     <nav>
-      <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div>
       <h1>Sakar Panta</h1>
       <p>Photographer | Web Designer | Storyteller</p>
       <button class="btn">Explore My Work</button>
@@ -242,26 +206,50 @@
 
   <!-- Portfolio Section -->
   <section class="section" id="portfolio">
-    <h2>My Work</h2>
+    <h2>My Portfolio</h2>
     <div class="container portfolio-grid">
+      <div class="portfolio-item"><img src="IMG_0288%202.jpg" alt="Street Photography"></div>
+      <div class="portfolio-item"><img src="DSC_7860.jpeg" alt="Portraits"></div>
+      <div class="portfolio-item"><img src="1111.jpg" alt="Wildlife"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <div class="container">
+      <p>Hello, I'm Sakar Panta. Welcome to my website where I share my photography, web design, and creative projects. Let's connect!</p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <div class="container">
       <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-        <div class="overlay"><span>Street Photography</span></div>
+        <h3>Basic Package - $10/month</h3>
+        <p>Web Design, Photography, 5GB Storage, Email Support</p>
       </div>
       <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-        <div class="overlay"><span>Portraits</span></div>
+        <h3>Pro Package - $25/month</h3>
+        <p>Web Design, Photography, 50GB Storage, Premium Support</p>
       </div>
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife">
-        <div class="overlay"><span>Wildlife</span></div>
-      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="container">
+      <p>Email: <a href="mailto:Sakarpanta2002@gmail.com">Sakarpanta2002@gmail.com</a></p>
+      <p>Phone: (+61) 04 16964722</p>
+      <p>Location: Melbourne, Australia</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Sakar Panta | All Rights Reserved</p>
+    <p>&copy; 2025 Sakar Panta. All Rights Reserved.</p>
   </footer>
 
 </body>
