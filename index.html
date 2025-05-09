@@ -56,14 +56,18 @@
       color: #fff;
     }
 
+    .hero .container {
+      position: relative;
+      top: -40px;
+    }
+
     .hero h1 {
-      font-size: 36px;
+      font-size: 48px;
       margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 20px;
     }
 
     .hero .btn {
@@ -79,13 +83,32 @@
       background-color: #555;
     }
 
-    .services, .portfolio, .contact, .pricing {
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .portfolio-item {
+      width: 30%;
+      position: relative;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .pricing, .contact {
       padding: 50px 0;
       background-color: #fff;
       margin-bottom: 20px;
     }
 
-    .services h2, .portfolio h2, .contact h2, .pricing h2 {
+    .pricing h2, .contact h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 28px;
@@ -94,17 +117,18 @@
 
     .pricing-grid {
       display: flex;
-      justify-content: center;
       gap: 20px;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     .pricing-item {
-      background-color: #f4f4f4;
-      padding: 20px;
       width: 300px;
+      padding: 20px;
+      background-color: #f4f4f4;
       text-align: center;
-      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .pricing-item h3 {
@@ -113,8 +137,9 @@
     }
 
     .pricing-item .price {
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 10px;
     }
 
     .pricing-item .btn {
@@ -123,25 +148,39 @@
       padding: 10px 20px;
       text-decoration: none;
       font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .pricing-item .btn:hover {
+      background-color: #555;
     }
 
     .contact form {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .contact input, .contact textarea {
+    .contact input, .contact textarea, .contact button {
       padding: 10px;
       border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     .contact button {
       background-color: #333;
       color: #fff;
-      padding: 10px 20px;
-      border: none;
+      font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+      background-color: #555;
     }
 
   </style>
@@ -154,8 +193,6 @@
       <div class="logo">Sakar Panta</div>
       <nav>
         <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -167,7 +204,29 @@
     <div class="container">
       <h1>SAKAR PANTA</h1>
       <p>Photographer and Web Designer.</p>
-      <a href="#contact" class="btn">Book Now</a>
+      <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/Artboard%201.pdf" download="S_Panta_Resume.pdf" class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio">
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2919.jpeg" alt="Portfolio 1">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2941.jpeg" alt="Portfolio 2">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2950.jpeg" alt="Portfolio 3">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg" alt="Portfolio 4">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3108.jpeg" alt="Portfolio 5">
+    </div>
+    <div class="portfolio-item">
+      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3137.jpeg" alt="Portfolio 6">
     </div>
   </section>
 
@@ -178,38 +237,17 @@
       <div class="pricing-grid">
         <div class="pricing-item">
           <h3>Basic</h3>
-          <p>Web Design, Photography, 5GB Storage, Mail Support</p>
-          <div class="price">$10/month</div>
+          <p>Web Design | Photography | 5GB Storage | Mail Support</p>
+          <div class="price">$10 / month</div>
           <a href="#" class="btn">Sign Up</a>
         </div>
+
         <div class="pricing-item">
           <h3>Pro</h3>
-          <p>Web Design, Photography, 50GB Storage, Endless Support</p>
-          <div class="price">$25/month</div>
+          <p>Web Design | Photography | 50GB Storage | Endless Support</p>
+          <div class="price">$25 / month</div>
           <a href="#" class="btn">Sign Up</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2>My Portfolio</h2>
-
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-        <span>Street Photography</span>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-        <span>Portraits</span>
-      </div>
-
-      <div class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-        <span>Food Photography</span>
       </div>
     </div>
   </section>
@@ -218,28 +256,15 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <div>
-        <p><strong>Location:</strong> Melbourne, AUSTRALIA</p>
-        <p><strong>Phone:</strong> (+61) 04 16964722</p>
-        <p><strong>Email:</strong> Sakarpanta2002@gmail.com</p>
-      </div>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heroButton = document.querySelector(".hero .btn");
-      heroButton.addEventListener("click", function () {
-        alert("Thank you for your interest! Please contact me through the form.");
-      });
-    });
-  </script>
 
 </body>
 </html>
