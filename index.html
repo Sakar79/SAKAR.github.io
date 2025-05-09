@@ -56,14 +56,14 @@
       color: #fff;
     }
 
-    .hero .container {
-      position: relative;
-      top: -40px;
-    }
-
     .hero h1 {
       font-size: 36px;
       margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
     }
 
     .hero .btn {
@@ -92,37 +92,51 @@
       color: #333;
     }
 
-    .pricing .container {
+    .pricing-grid {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .pricing .plan {
-      width: 48%;
+    .pricing-item {
       background-color: #f4f4f4;
       padding: 20px;
-      margin-bottom: 20px;
+      width: 300px;
       text-align: center;
       border: 1px solid #ccc;
     }
 
-    .pricing .plan h3 {
+    .pricing-item h3 {
       font-size: 24px;
       margin-bottom: 10px;
-      color: #333;
     }
 
-    .pricing .plan p {
-      margin-bottom: 10px;
-    }
-
-    .pricing .plan .price {
-      font-size: 36px;
+    .pricing-item .price {
+      font-size: 32px;
       margin-bottom: 20px;
     }
 
-    .pricing .plan button {
+    .pricing-item .btn {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .contact button {
       background-color: #333;
       color: #fff;
       padding: 10px 20px;
@@ -130,46 +144,6 @@
       cursor: pointer;
     }
 
-    .pricing .plan button:hover {
-      background-color: #555;
-    }
-
-    .portfolio-item {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 15px;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
-    }
-
-    .portfolio-item:hover {
-      transform: scale(1.02);
-    }
-
-    .portfolio-item span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
   </style>
 </head>
 <body>
@@ -191,8 +165,8 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="container">
-      <h1>Capturing Moments, Creating Stories</h1>
-      <p>Photography | Web Design | Visual Storytelling</p>
+      <h1>SAKAR PANTA</h1>
+      <p>Photographer and Web Designer.</p>
       <a href="#contact" class="btn">Book Now</a>
     </div>
   </section>
@@ -201,18 +175,41 @@
   <section class="pricing" id="pricing">
     <div class="container">
       <h2>My Pricing</h2>
-      <div class="plan">
-        <h3>Basic Plan</h3>
-        <p>Web Design, Photography, 5GB Storage, Mail Support</p>
-        <div class="price">$10/month</div>
-        <button>Sign Up</button>
+      <div class="pricing-grid">
+        <div class="pricing-item">
+          <h3>Basic</h3>
+          <p>Web Design, Photography, 5GB Storage, Mail Support</p>
+          <div class="price">$10/month</div>
+          <a href="#" class="btn">Sign Up</a>
+        </div>
+        <div class="pricing-item">
+          <h3>Pro</h3>
+          <p>Web Design, Photography, 50GB Storage, Endless Support</p>
+          <div class="price">$25/month</div>
+          <a href="#" class="btn">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>My Portfolio</h2>
+
+      <div class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+        <span>Street Photography</span>
       </div>
 
-      <div class="plan">
-        <h3>Pro Plan</h3>
-        <p>Web Design, Photography, 50GB Storage, Endless Support</p>
-        <div class="price">$25/month</div>
-        <button>Sign Up</button>
+      <div class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+        <span>Portraits</span>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+        <span>Food Photography</span>
       </div>
     </div>
   </section>
@@ -221,17 +218,28 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <p><i class="fa fa-map-marker"></i> Melbourne, AUSTRALIA</p>
-      <p><i class="fa fa-phone"></i> (+61) 04 16964722</p>
-      <p><i class="fa fa-envelope"></i> Sakarpanta2002@gmail.com</p>
+      <div>
+        <p><strong>Location:</strong> Melbourne, AUSTRALIA</p>
+        <p><strong>Phone:</strong> (+61) 04 16964722</p>
+        <p><strong>Email:</strong> Sakarpanta2002@gmail.com</p>
+      </div>
       <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroButton = document.querySelector(".hero .btn");
+      heroButton.addEventListener("click", function () {
+        alert("Thank you for your interest! Please contact me through the form.");
+      });
+    });
+  </script>
 
 </body>
 </html>
