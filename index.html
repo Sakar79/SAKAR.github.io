@@ -12,6 +12,7 @@
       font-family: "Montserrat", sans-serif;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     .sidebar {
@@ -22,10 +23,11 @@
       padding-top: 50px;
       color: #fff;
       text-align: center;
+      transition: width 0.3s;
     }
 
     .sidebar img {
-      width: 150px;
+      width: 120px;
       border-radius: 50%;
       margin-bottom: 20px;
     }
@@ -45,6 +47,7 @@
     .content {
       margin-left: 300px;
       padding: 20px;
+      transition: margin-left 0.3s;
     }
 
     .hero {
@@ -57,16 +60,16 @@
     }
 
     .hero h1 {
-      font-size: 50px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
 
     .section h2 {
-      font-size: 36px;
+      font-size: 28px;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -91,8 +94,9 @@
 
     .pricing-table {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       gap: 16px;
+      justify-content: center;
     }
 
     .pricing-card {
@@ -101,15 +105,6 @@
       width: 300px;
       text-align: center;
       border-radius: 8px;
-    }
-
-    .pricing-card h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .pricing-card .price {
-      font-size: 32px;
       margin-bottom: 20px;
     }
 
@@ -123,6 +118,42 @@
       color: #fff;
       padding: 40px 20px;
       text-align: center;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .portfolio-grid {
+        flex-direction: column;
+      }
+
+      .portfolio-item {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .pricing-table {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -153,10 +184,7 @@
     <!-- About Section -->
     <div class="section" id="about">
       <h2>About Me</h2>
-      <p>
-        I am Sakar Panta, a passionate photographer and web designer based in Melbourne, Australia. 
-        From capturing fleeting moments to creating visually compelling websites, I combine creativity with functionality.
-      </p>
+      <p>I am Sakar Panta, a passionate photographer and web designer based in Melbourne. I create visually compelling stories through photography and functional, aesthetic websites.</p>
     </div>
 
     <!-- Portfolio Section -->
@@ -184,7 +212,7 @@
       <div class="pricing-table">
         <div class="pricing-card">
           <h3>Basic</h3>
-          <p class="price">$10/month</p>
+          <p>$10/month</p>
           <p>Photography</p>
           <p>5GB Storage</p>
           <p>Mail Support</p>
@@ -193,7 +221,7 @@
 
         <div class="pricing-card">
           <h3>Pro</h3>
-          <p class="price">$25/month</p>
+          <p>$25/month</p>
           <p>Photography & Web Design</p>
           <p>50GB Storage</p>
           <p>Endless Support</p>
@@ -206,14 +234,15 @@
     <div class="section" id="contact">
       <h2>Contact Me</h2>
       <div class="contact-form">
-        <form action="/submit" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required><br>
-          <input type="email" name="email" placeholder="Your Email" required><br>
-          <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <form>
+          <input type="text" placeholder="Your Name" required><br>
+          <input type="email" placeholder="Your Email" required><br>
+          <textarea placeholder="Your Message" required></textarea><br>
           <button type="submit">Send Message</button>
         </form>
       </div>
     </div>
+
   </div>
 
   <!-- Footer -->
