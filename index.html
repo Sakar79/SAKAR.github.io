@@ -103,16 +103,52 @@
             background-color: #555;
         }
 
-        .download-section, .pricing, .contact {
+        .content-section {
             padding: 50px 0;
             background-color: #fff;
         }
 
-        .download-section h2, .pricing h2, .contact h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .photo-container {
+            width: calc(33.333% - 20px);
+            max-width: 300px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .photo-container:hover .photo-title {
+            opacity: 1;
+        }
+
+        .download-section, .pricing, .contact {
+            padding: 50px 0;
+            background-color: #fff;
         }
 
         .download-section .btn-download {
@@ -191,6 +227,29 @@
         <a href="#contact" class="btn">Book Now</a>
     </div>
 </section>
+
+<!-- Portfolio Section -->
+<div class="content-section" id="portfolio">
+    <h2>My Portfolio</h2>
+    <div class="portfolio-grid">
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+            <div class="photo-title">Street Photography</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+            <div class="photo-title">Portraits</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+            <div class="photo-title">Food Photography</div>
+        </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+            <div class="photo-title">Work Shoot</div>
+        </div>
+    </div>
+</div>
 
 <!-- Download Section -->
 <section class="download-section" id="download">
