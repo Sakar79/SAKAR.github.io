@@ -91,8 +91,8 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transform-origin: center;
             transition: transform 0.4s ease, opacity 0.4s ease;
+            transform: scale(0.8);
         }
 
         .photo-container img {
@@ -204,15 +204,15 @@
         }
     });
 
-    // Scroll Animation for Images
+    // Scroll Animation for Images (Gallery Effect)
     const photos = document.querySelectorAll('.photo-container');
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
         photos.forEach(photo => {
             const rect = photo.getBoundingClientRect();
             const distanceFromCenter = Math.abs(windowHeight / 2 - (rect.top + rect.height / 2));
-            const scale = 1 - (distanceFromCenter / windowHeight) * 0.2;
-            photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
+            const scale = 0.8 + (1 - (distanceFromCenter / windowHeight) * 0.4);  // Scale between 0.8 and 1.2
+            photo.style.transform = `scale(${scale})`;
         });
     });
 
