@@ -79,17 +79,59 @@
       background-color: #555;
     }
 
-    .services, .portfolio, .contact {
+    .services, .portfolio, .contact, .pricing {
       padding: 50px 0;
       background-color: #fff;
       margin-bottom: 20px;
     }
 
-    .services h2, .portfolio h2, .contact h2 {
+    .services h2, .portfolio h2, .contact h2, .pricing h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 28px;
       color: #333;
+    }
+
+    .pricing .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .pricing .plan {
+      width: 48%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .pricing .plan h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .pricing .plan p {
+      margin-bottom: 10px;
+    }
+
+    .pricing .plan .price {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .pricing .plan button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pricing .plan button:hover {
+      background-color: #555;
     }
 
     .portfolio-item {
@@ -128,7 +170,6 @@
       left: 0;
       z-index: 0;
     }
-
   </style>
 </head>
 <body>
@@ -141,7 +182,7 @@
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -156,51 +197,23 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services" id="services">
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
     <div class="container">
-      <h2>My Services</h2>
-      <div class="service">Photography</div>
-      <div class="service">Web Design</div>
-      <div class="service">Visual Storytelling</div>
-    </div>
-  </section>
+      <h2>My Pricing</h2>
+      <div class="plan">
+        <h3>Basic Plan</h3>
+        <p>Web Design, Photography, 5GB Storage, Mail Support</p>
+        <div class="price">$10/month</div>
+        <button>Sign Up</button>
+      </div>
 
-  <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2>My Portfolio</h2>
-
-      <a href="street-photography.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-        <span>Street Photography</span>
-      </a>
-
-      <a href="portraits.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-        <span>Portraits</span>
-      </a>
-
-      <a href="food-photography.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-        <span>Food Photography</span>
-      </a>
-
-      <a href="work-shoot.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-        <span>Work Shoot</span>
-      </a>
-
-      <a href="photoshop.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
-        <span>Photoshop</span>
-      </a>
-
-      <a href="wildlife-photography.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
-        <span>Wildlife Photography</span>
-      </a>
-
+      <div class="plan">
+        <h3>Pro Plan</h3>
+        <p>Web Design, Photography, 50GB Storage, Endless Support</p>
+        <div class="price">$25/month</div>
+        <button>Sign Up</button>
+      </div>
     </div>
   </section>
 
@@ -208,6 +221,9 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contact Me</h2>
+      <p><i class="fa fa-map-marker"></i> Melbourne, AUSTRALIA</p>
+      <p><i class="fa fa-phone"></i> (+61) 04 16964722</p>
+      <p><i class="fa fa-envelope"></i> Sakarpanta2002@gmail.com</p>
       <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
@@ -216,15 +232,6 @@
       </form>
     </div>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heroButton = document.querySelector(".hero .btn");
-      heroButton.addEventListener("click", function () {
-        alert("Thank you for your interest! Please contact me through the form.");
-      });
-    });
-  </script>
 
 </body>
 </html>
