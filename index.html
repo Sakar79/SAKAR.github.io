@@ -58,31 +58,6 @@
             100% { transform: scale(1); }
         }
 
-        .intro-container {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            color: #fff;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        .intro-heading {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .intro-text {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
         .content-section {
             padding: 50px 0;
             text-align: center;
@@ -110,6 +85,10 @@
             transition: transform 0.5s ease;
         }
 
+        .photo-container:hover img {
+            transform: scale(1.1);
+        }
+
         .photo-title {
             position: absolute;
             top: 50%;
@@ -131,7 +110,7 @@
             background-color: #f0f0f0;
         }
 
-        .pricing-grid, .contact-grid {
+        .pricing-container, .contact-container {
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -170,19 +149,12 @@
 <!-- Navbar -->
 <div class="navbar" id="navbar">
     <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
     <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
 </div>
 
 <!-- Background Section -->
-<div class="bgimg">
-    <div class="intro-container">
-        <div class="intro-heading">Hi, I'm Sakar Panta</div>
-        <div class="intro-text">
-            Photographer & Web Designer. Capturing moments that tell stories. Let's create something amazing together.
-        </div>
-    </div>
-</div>
+<div class="bgimg"></div>
 
 <!-- Portfolio Section -->
 <div class="content-section" id="portfolio">
@@ -199,10 +171,10 @@
     </div>
 </div>
 
-<!-- Pricing Section -->
+<!-- Pricing Section (Copied from the first code) -->
 <div class="pricing-section" id="pricing">
     <h2>My Pricing</h2>
-    <div class="pricing-grid">
+    <div class="pricing-container">
         <div class="pricing-card">
             <h3>Basic</h3>
             <p>Web Design, Photography</p>
@@ -223,10 +195,10 @@
     </div>
 </div>
 
-<!-- Contact Section -->
+<!-- Contact Section (Copied from the first code) -->
 <div class="contact-section" id="contact">
     <h2>Contact Me</h2>
-    <div class="contact-grid">
+    <div class="contact-container">
         <div class="contact-card">
             <h3>Contact Information</h3>
             <p>Melbourne, AUSTRALIA</p>
