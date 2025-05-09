@@ -46,34 +46,24 @@
             height: 100vh;
             background-position: center;
             background-size: cover;
-            background-attachment: fixed;
-            position: relative;
-            overflow: hidden;
-            filter: blur(0px); /* Prevent blur */
-            transition: filter 0.3s ease-in-out;
-        }
-
-        .bgimg:hover {
-            filter: none; /* Optional, adds hover effect for sharpened background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .intro-container {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
             max-width: 600px;
-            background-color: rgba(0, 0, 0, 0.5); /* Keeps original background */
         }
 
         .intro-heading {
             font-size: 32px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .intro-text {
@@ -97,6 +87,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            transform-origin: center;
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
 
@@ -151,12 +142,12 @@
     <a href="#pricing">Pricing</a>
 </div>
 
-<!-- Background Section with Parallax -->
-<div class="bgimg" id="home">
+<!-- Introduction Section -->
+<div class="bgimg">
     <div class="intro-container">
         <div class="intro-heading">Hi, I'm Sakar Panta</div>
         <div class="intro-text">
-            A photographer and web designer capturing moments that tell stories. Let's create something amazing.
+            I am a photographer and web designer. I capture moments that tell stories, from street photography to stunning portraits. Let's connect and create something amazing.
         </div>
     </div>
 </div>
@@ -209,23 +200,16 @@
         }
     });
 
-    // Original Scroll Animation for Images
+    // Scroll Animation for Images
     const photos = document.querySelectorAll('.photo-container');
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
         photos.forEach(photo => {
-            const rect = photo.getBoundingClientRect();
-            const distanceFromCenter = Math.abs(windowHeight / 2 - (rect.top + rect.height / 2));
-            const scale = 0.8 + (1 - (distanceFromCenter / windowHeight) * 0.4);  // Scale between 0.8 and 1.2
-            photo.style.transform = `scale(${scale})`;
+            const photoRect = photo.getBoundingClientRect();
+            const distanceFromCenter = Math.abs(windowHeight / 2 - (photoRect.top + photoRect.height / 2));
+            const scale = 1 - (distanceFromCenter / windowHeight) * 0.2;
+            photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
         });
-    });
-
-    // Parallax Effect for Background
-    window.addEventListener('scroll', function() {
-        const bg = document.querySelector('.bgimg');
-        const scrollPosition = window.scrollY;
-        bg.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
     });
 </script>
 
