@@ -48,28 +48,15 @@
             background-size: cover;
             background-position: center;
             overflow: hidden;
+            animation: bgAnimate 15s infinite alternate ease-in-out;
         }
 
-        .bgimg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: inherit;
-            background-size: cover;
-            background-position: center;
-            animation: bgMove 10s infinite alternate ease-in-out;
-            z-index: -1;
-        }
-
-        @keyframes bgMove {
+        @keyframes bgAnimate {
             0% {
                 transform: scale(1) translateY(0);
             }
             50% {
-                transform: scale(1.05) translateY(-10px);
+                transform: scale(1.05) translateY(-15px);
             }
             100% {
                 transform: scale(1) translateY(0);
@@ -239,9 +226,8 @@
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
         photos.forEach(photo => {
-            const photoRect = photo.getBoundingClientRect();
-            const distanceFromCenter = Math.abs(windowHeight / 2 - (photoRect.top + photoRect.height / 2));
-            const scale = 1 - (distanceFromCenter / windowHeight) * 0.2;
+            const rect = photo.getBoundingClientRect();
+            const scale = 1 - Math.abs(rect.top - windowHeight / 2) / windowHeight * 0.3;
             photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
         });
     });
