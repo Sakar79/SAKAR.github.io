@@ -129,23 +129,35 @@
         .pricing, .contact {
             padding: 50px 0;
             background-color: #fff;
-            text-align: center;
         }
 
         .pricing h2, .contact h2 {
+            text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
             color: #333;
         }
 
-        .pricing .price-item, .contact form {
+        .price-item {
             background-color: #f4f4f4;
             padding: 20px;
             margin-bottom: 15px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .price-item:hover {
+            background-color: #ddd;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .contact input, .contact textarea {
-            width: 100%;
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -162,21 +174,6 @@
 
         .contact .btn:hover {
             background-color: #555;
-        }
-
-        @media (max-width: 768px) {
-            .intro-container {
-                width: 95%;
-                padding: 15px;
-            }
-
-            .intro-heading {
-                font-size: 24px;
-            }
-
-            .intro-text {
-                font-size: 14px;
-            }
         }
     </style>
 </head>
@@ -214,10 +211,6 @@
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
             <div class="photo-title">Food Photography</div>
-        </div>
-        <div class="photo-container">
-            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-            <div class="photo-title">Work Shoot</div>
         </div>
     </div>
 </div>
