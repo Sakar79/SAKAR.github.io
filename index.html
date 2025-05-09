@@ -50,9 +50,9 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #00C9A7, #005F56);
+            background: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg') center/cover;
             color: #121212;
-            padding-top: 120px;
+            padding-top: 150px;
         }
 
         .hero h1 {
@@ -65,21 +65,6 @@
             margin-bottom: 30px;
         }
 
-        .hero .download-btn {
-            padding: 15px 40px;
-            background-color: #00C9A7;
-            border: none;
-            color: #121212;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .hero .download-btn:hover {
-            background-color: #00A385;
-            transform: scale(1.05);
-        }
-
         .skills {
             background-color: #1F1F1F;
         }
@@ -88,17 +73,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 20px;
-        }
-
-        .skills .skill-item {
-            background-color: #292929;
-            padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s;
-        }
-
-        .skills .skill-item:hover {
-            transform: translateY(-5px);
         }
 
         .portfolio .grid {
@@ -111,45 +85,18 @@
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            transition: transform 0.4s;
             cursor: pointer;
         }
 
         .portfolio .grid-item img {
             width: 100%;
-            filter: brightness(0.7);
-            transition: filter 0.3s;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
         }
 
         .portfolio .grid-item:hover img {
-            filter: brightness(1);
-        }
-
-        .testimonials {
-            background-color: #1F1F1F;
-        }
-
-        .testimonials .testimonial-item {
-            background-color: #292929;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .contact input, .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            background-color: #292929;
-            color: #ECECEC;
-        }
-
-        .contact button {
-            padding: 12px 30px;
-            background-color: #00C9A7;
-            border: none;
-            cursor: pointer;
+            transform: scale(1.05);
         }
 
         .footer {
@@ -170,7 +117,6 @@
             <a href="#hero">Home</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </nav>
     </div>
@@ -179,19 +125,9 @@
         <div class="container">
             <h1>Sakar Panta</h1>
             <p>Photographer | Web Designer | Storyteller</p>
-            <button class="download-btn">Download Resume</button>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skill-grid">
-                <div class="skill-item"><i class="fa-solid fa-camera"></i> Photography</div>
-                <div class="skill-item"><i class="fa-solid fa-code"></i> Web Design</div>
-                <div class="skill-item"><i class="fa-solid fa-pen-nib"></i> Graphic Design</div>
-                <div class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</div>
-            </div>
+            <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/Artboard%201.pdf" download="S_Panta_Resume.pdf">
+                <button>Download Resume</button>
+            </a>
         </div>
     </section>
 
@@ -199,30 +135,45 @@
         <div class="container">
             <h2>Portfolio</h2>
             <div class="grid">
-                <div class="grid-item"><img src="images/photo1.jpg" alt="Project 1"></div>
-                <div class="grid-item"><img src="images/photo2.jpg" alt="Project 2"></div>
-                <div class="grid-item"><img src="images/photo3.jpg" alt="Project 3"></div>
+                <div class="grid-item">
+                    <a href="street-photography.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="portraits.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="food-photography.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="work-shoot.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="photoshop.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
+                    </a>
+                </div>
+                <div class="grid-item">
+                    <a href="wildlife-photography.html">
+                        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial-item">"Sakar's work is phenomenal! He truly captured our brand's essence." - Client A</div>
-            <div class="testimonial-item">"Creative, timely, and professional. Highly recommended!" - Client B</div>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <form>
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <p>Email: <a href="mailto:Sakarpanta2002@gmail.com">Sakarpanta2002@gmail.com</a></p>
+            <p>Phone: (+61) 04 16964722</p>
         </div>
     </section>
 
