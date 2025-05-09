@@ -58,6 +58,31 @@
             100% { transform: scale(1); }
         }
 
+        .intro-container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .intro-heading {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         .content-section {
             padding: 50px 0;
             text-align: center;
@@ -85,10 +110,6 @@
             transition: transform 0.5s ease;
         }
 
-        .photo-container:hover img {
-            transform: scale(1.1);
-        }
-
         .photo-title {
             position: absolute;
             top: 50%;
@@ -105,42 +126,24 @@
             opacity: 1;
         }
 
-        .pricing-section, .contact-section {
-            padding: 50px 0;
-            background-color: #f0f0f0;
-        }
+        @media (max-width: 768px) {
+            .navbar a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
 
-        .pricing-container, .contact-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+            .intro-container {
+                width: 95%;
+                padding: 15px;
+            }
 
-        .pricing-card, .contact-card {
-            width: 300px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-        }
+            .intro-heading {
+                font-size: 24px;
+            }
 
-        .pricing-card h3, .contact-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .pricing-card button, .contact-card button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .pricing-card button:hover, .contact-card button:hover {
-            background-color: #555;
+            .intro-text {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -149,16 +152,23 @@
 <!-- Navbar -->
 <div class="navbar" id="navbar">
     <a href="#portfolio">Portfolio</a>
-    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
+    <a href="#pricing">Pricing</a>
 </div>
 
 <!-- Background Section -->
-<div class="bgimg"></div>
+<div class="bgimg">
+    <div class="intro-container">
+        <div class="intro-heading">Hi, I'm Sakar Panta</div>
+        <div class="intro-text">
+            Photographer & Web Designer. Capturing moments that tell stories. Let's create something amazing together.
+        </div>
+    </div>
+</div>
 
 <!-- Portfolio Section -->
 <div class="content-section" id="portfolio">
-    <h2>My Portfolio</h2>
+    <h2 class="section-heading">My Portfolio</h2>
     <div class="portfolio-grid">
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
@@ -168,50 +178,34 @@
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
             <div class="photo-title">Portraits</div>
         </div>
-    </div>
-</div>
-
-<!-- Pricing Section (Copied from the first code) -->
-<div class="pricing-section" id="pricing">
-    <h2>My Pricing</h2>
-    <div class="pricing-container">
-        <div class="pricing-card">
-            <h3>Basic</h3>
-            <p>Web Design, Photography</p>
-            <p>5GB Storage</p>
-            <p>Mail Support</p>
-            <h3>$10/month</h3>
-            <button>Sign Up</button>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+            <div class="photo-title">Food Photography</div>
         </div>
-
-        <div class="pricing-card">
-            <h3>Pro</h3>
-            <p>Web Design, Photography</p>
-            <p>50GB Storage</p>
-            <p>Endless Support</p>
-            <h3>$25/month</h3>
-            <button>Sign Up</button>
-        </div>
-    </div>
-</div>
-
-<!-- Contact Section (Copied from the first code) -->
-<div class="contact-section" id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-        <div class="contact-card">
-            <h3>Contact Information</h3>
-            <p>Melbourne, AUSTRALIA</p>
-            <p>Phone: (+61) 04 16964722</p>
-            <p>Email: Sakarpanta2002@gmail.com</p>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+            <div class="photo-title">Work Shoot</div>
         </div>
     </div>
 </div>
 
 <script>
+    // Navbar Scroll Effect
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll Animation for Images
+    const photos = document.querySelectorAll('.photo-container');
+    window.addEventListener('scroll', function() {
+        const windowHeight = window.innerHeight;
+        photos.forEach(photo => {
+            const rect = photo.getBoundingClientRect();
+            const distance = Math.abs(rect.top - windowHeight / 2);
+            const scale = 1 - (distance / windowHeight) * 0.2;
+            photo.style.transform = scale(${Math.max(scale, 0.85)});
+        });
     });
 </script>
 
