@@ -98,7 +98,6 @@
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.4s ease, opacity 0.4s ease;
-            transform: scale(0.8);
         }
 
         .photo-container img {
@@ -210,7 +209,7 @@
         }
     });
 
-    // Scroll Animation for Images (Gallery Effect)
+    // Original Scroll Animation for Images
     const photos = document.querySelectorAll('.photo-container');
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
