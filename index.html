@@ -18,48 +18,96 @@
 
         .container {
             width: 100%;
-            padding: 0 20px;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .header {
-            padding: 40px 0;
+        .header, .hero, .skills, .portfolio, .testimonials, .contact, .footer {
+            padding: 60px 0;
             text-align: center;
         }
 
-        .header h1 {
-            font-size: 3rem;
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #121212;
+            z-index: 1000;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header nav a {
+            margin: 0 15px;
+            color: #00C9A7;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .header nav a:hover {
+            color: #00A385;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00C9A7, #005F56);
+            color: #121212;
+            padding-top: 120px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
             font-weight: 600;
         }
 
-        .header p {
+        .hero p {
             font-size: 1.2rem;
-            opacity: 0.7;
+            margin-bottom: 30px;
         }
 
-        .header .download-btn {
-            margin-top: 20px;
-            padding: 10px 30px;
+        .hero .download-btn {
+            padding: 15px 40px;
             background-color: #00C9A7;
-            color: #121212;
             border: none;
+            color: #121212;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .header .download-btn:hover {
+        .hero .download-btn:hover {
             background-color: #00A385;
+            transform: scale(1.05);
         }
 
-        .grid {
+        .skills {
+            background-color: #1F1F1F;
+        }
+
+        .skills .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .skills .skill-item {
+            background-color: #292929;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .skills .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            padding: 60px 0;
         }
 
-        .grid-item {
+        .portfolio .grid-item {
             position: relative;
             overflow: hidden;
             border-radius: 12px;
@@ -67,101 +115,122 @@
             cursor: pointer;
         }
 
-        .grid-item img {
+        .portfolio .grid-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.75);
-            transition: filter 0.4s, transform 0.4s;
+            filter: brightness(0.7);
+            transition: filter 0.3s;
         }
 
-        .grid-item:hover img {
+        .portfolio .grid-item:hover img {
             filter: brightness(1);
-            transform: scale(1.05);
         }
 
-        .grid-item .hover-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #00C9A7;
-            font-size: 1.5rem;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.4s;
+        .testimonials {
+            background-color: #1F1F1F;
         }
 
-        .grid-item:hover .hover-text {
-            opacity: 1;
+        .testimonials .testimonial-item {
+            background-color: #292929;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            background-color: #292929;
+            color: #ECECEC;
+        }
+
+        .contact button {
+            padding: 12px 30px;
+            background-color: #00C9A7;
+            border: none;
+            cursor: pointer;
         }
 
         .footer {
-            padding: 30px 0;
-            text-align: center;
+            background-color: #292929;
+            padding: 30px;
+        }
+
+        .footer p {
             font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        .footer a {
-            color: #00C9A7;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer a:hover {
-            opacity: 1;
+            color: #AAAAAA;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>Sakar Panta</h1>
-            <p>Photographer & Web Designer</p>
-            <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/Artboard%201.pdf" download="S_Panta_Resume.pdf">
-                <button class="download-btn">Download Resume</button>
-            </a>
-        </div>
-
-        <!-- Portfolio Grid -->
-        <div class="grid">
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-                <div class="hover-text">Street Photography</div>
-            </div>
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-                <div class="hover-text">Portraits</div>
-            </div>
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-                <div class="hover-text">Food Photography</div>
-            </div>
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-                <div class="hover-text">Work Shoot</div>
-            </div>
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
-                <div class="hover-text">Photoshop</div>
-            </div>
-            <div class="grid-item">
-                <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
-                <div class="hover-text">Wildlife Photography</div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>&copy; 2025 Sakar Panta. All Rights Reserved.</p>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
+    <div class="header">
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Sakar Panta</h1>
+            <p>Photographer | Web Designer | Storyteller</p>
+            <button class="download-btn">Download Resume</button>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-item"><i class="fa-solid fa-camera"></i> Photography</div>
+                <div class="skill-item"><i class="fa-solid fa-code"></i> Web Design</div>
+                <div class="skill-item"><i class="fa-solid fa-pen-nib"></i> Graphic Design</div>
+                <div class="skill-item"><i class="fa-solid fa-video"></i> Video Editing</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="grid">
+                <div class="grid-item"><img src="images/photo1.jpg" alt="Project 1"></div>
+                <div class="grid-item"><img src="images/photo2.jpg" alt="Project 2"></div>
+                <div class="grid-item"><img src="images/photo3.jpg" alt="Project 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial-item">"Sakar's work is phenomenal! He truly captured our brand's essence." - Client A</div>
+            <div class="testimonial-item">"Creative, timely, and professional. Highly recommended!" - Client B</div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sakar Panta. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
