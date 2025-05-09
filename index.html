@@ -60,7 +60,7 @@
 
         .intro-container {
             position: absolute;
-            top: 35%;
+            top: 30%;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.5);
@@ -84,17 +84,20 @@
         }
 
         .content-section {
-            padding: 80px 5%;
+            padding: 50px 0;
             text-align: center;
         }
 
         .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
         .photo-container {
+            width: 80%;
+            max-width: 600px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -121,22 +124,6 @@
 
         .photo-container:hover .photo-title {
             opacity: 1;
-        }
-
-        .section-heading {
-            font-size: 26px;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        @media (max-width: 1200px) {
-            .intro-container {
-                width: 90%;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
         }
 
         @media (max-width: 768px) {
@@ -200,20 +187,6 @@
             <div class="photo-title">Work Shoot</div>
         </div>
     </div>
-</div>
-
-<!-- Contact Section -->
-<div class="content-section" id="contact">
-    <h2 class="section-heading">Contact</h2>
-    <p>Email: sakarpanta2002@gmail.com</p>
-    <p>Phone: (+61) 04 16964722</p>
-</div>
-
-<!-- Pricing Section -->
-<div class="content-section" id="pricing">
-    <h2 class="section-heading">Pricing</h2>
-    <p>Basic Package: $10/month</p>
-    <p>Premium Package: $25/month</p>
 </div>
 
 <script>
