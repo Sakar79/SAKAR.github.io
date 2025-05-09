@@ -126,33 +126,16 @@
             opacity: 1;
         }
 
-        .download-section, .pricing, .contact {
+        .pricing, .contact {
             padding: 50px 0;
             background-color: #fff;
         }
 
-        .download-section h2, .pricing h2, .contact h2 {
+        .pricing h2, .contact h2 {
             text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
             color: #333;
-        }
-
-        .download-section .btn-download {
-            display: block;
-            width: 200px;
-            margin: 0 auto;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .download-section .btn-download:hover {
-            background-color: #555;
         }
 
         .price-item {
@@ -192,7 +175,6 @@
         .contact .btn:hover {
             background-color: #555;
         }
-
     </style>
 </head>
 <body>
@@ -202,7 +184,6 @@
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
     <a href="#pricing">Pricing</a>
-    <a href="#download">Download</a>
 </div>
 
 <!-- Background Section -->
@@ -227,14 +208,12 @@
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
             <div class="photo-title">Portraits</div>
         </div>
+        <div class="photo-container">
+            <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+            <div class="photo-title">Food Photography</div>
+        </div>
     </div>
 </div>
-
-<!-- Download Section -->
-<section class="download-section" id="download">
-    <h2>Download My Portfolio</h2>
-    <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/portfolio.pdf" class="btn-download" download>Download Portfolio</a>
-</section>
 
 <!-- Pricing Section -->
 <section class="pricing" id="pricing">
@@ -255,9 +234,22 @@
 </section>
 
 <script>
+    // Navbar Scroll Effect
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll Animation for Images
+    const photos = document.querySelectorAll('.photo-container');
+    window.addEventListener('scroll', function() {
+        const windowHeight = window.innerHeight;
+        photos.forEach(photo => {
+            const rect = photo.getBoundingClientRect();
+            const distance = Math.abs(rect.top - windowHeight / 2);
+            const scale = 1 - (distance / windowHeight) * 0.2;
+            photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
+        });
     });
 </script>
 
