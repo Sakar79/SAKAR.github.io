@@ -31,9 +31,9 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 30px;
+            margin: 0 20px;
             font-size: 16px;
-            padding: 8px 16px;
+            padding: 8px;
             transition: font-weight 0.3s;
         }
 
@@ -47,20 +47,13 @@
             background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
             background-size: cover;
             background-position: center;
-            overflow: hidden;
             animation: bgAnimate 15s infinite alternate ease-in-out;
         }
 
         @keyframes bgAnimate {
-            0% {
-                transform: scale(1) translateY(0);
-            }
-            50% {
-                transform: scale(1.05) translateY(-15px);
-            }
-            100% {
-                transform: scale(1) translateY(0);
-            }
+            0% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.05) translateY(-15px); }
+            100% { transform: scale(1) translateY(0); }
         }
 
         .intro-container {
@@ -68,12 +61,12 @@
             top: 25%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
-            width: 60%;
+            width: 80%;
             max-width: 600px;
         }
 
@@ -104,13 +97,13 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transform-origin: center;
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
 
         .photo-container img {
             width: 100%;
             height: auto;
+            transition: transform 0.4s;
         }
 
         .photo-title {
@@ -135,21 +128,42 @@
             color: #333;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .navbar a {
                 margin: 0 15px;
             }
 
             .intro-container {
-                width: 80%;
+                width: 90%;
+                top: 30%;
             }
 
             .intro-heading {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .intro-text {
                 font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+
+            .intro-container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .intro-heading {
+                font-size: 22px;
+            }
+
+            .intro-text {
+                font-size: 14px;
             }
         }
     </style>
