@@ -46,14 +46,18 @@
             height: 100vh;
             background-position: center;
             background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
         }
 
         .intro-container {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 40px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px 30px;
             border-radius: 10px;
             text-align: center;
             color: #fff;
@@ -63,7 +67,7 @@
         .intro-heading {
             font-size: 32px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .intro-text {
@@ -142,12 +146,12 @@
     <a href="#pricing">Pricing</a>
 </div>
 
-<!-- Introduction Section -->
-<div class="bgimg">
+<!-- Background Section with Parallax -->
+<div class="bgimg" id="home">
     <div class="intro-container">
         <div class="intro-heading">Hi, I'm Sakar Panta</div>
         <div class="intro-text">
-            I am a photographer and web designer. I capture moments that tell stories, from street photography to stunning portraits. Let's connect and create something amazing.
+            A photographer and web designer capturing moments that tell stories. Let's create something amazing.
         </div>
     </div>
 </div>
@@ -205,11 +209,18 @@
     window.addEventListener('scroll', function() {
         const windowHeight = window.innerHeight;
         photos.forEach(photo => {
-            const photoRect = photo.getBoundingClientRect();
-            const distanceFromCenter = Math.abs(windowHeight / 2 - (photoRect.top + photoRect.height / 2));
+            const rect = photo.getBoundingClientRect();
+            const distanceFromCenter = Math.abs(windowHeight / 2 - (rect.top + rect.height / 2));
             const scale = 1 - (distanceFromCenter / windowHeight) * 0.2;
             photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
         });
+    });
+
+    // Parallax Effect for Background
+    window.addEventListener('scroll', function() {
+        const bg = document.querySelector('.bgimg');
+        const scrollPosition = window.scrollY;
+        bg.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
     });
 </script>
 
