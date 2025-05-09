@@ -4,7 +4,7 @@
     <title>Sakar's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <style>
         body, h1, h2, h3, h4, h5, h6 {
             font-family: "Poppins", sans-serif;
@@ -40,7 +40,6 @@
         }
 
         .navbar a:hover, .navbar a:focus {
-            background-color: rgba(50, 50, 50, 0.7);
             font-weight: 600;
         }
 
@@ -49,11 +48,10 @@
             height: 100vh;
             background-position: center;
             background-size: cover;
-            background-attachment: fixed;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .intro-container {
@@ -76,26 +74,61 @@
             line-height: 1.6;
         }
 
-        .section-heading {
-            font-size: 28px;
+        .content-section {
+            padding: 80px 20px;
             text-align: center;
-            margin-top: 80px;
-            color: #333;
         }
 
-        .content-section {
-            padding: 60px 20px;
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .photo-container:hover .photo-title {
+            opacity: 1;
+        }
+
+        .section-heading {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #333;
         }
 
         @media (max-width: 768px) {
             .navbar a {
                 margin: 0 15px;
                 padding: 6px 12px;
-            }
-
-            .intro-container {
-                padding: 30px;
-                max-width: 90%;
             }
 
             .intro-heading {
@@ -105,6 +138,10 @@
             .intro-text {
                 font-size: 16px;
             }
+
+            .photo-container {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -112,8 +149,8 @@
 
 <!-- Navbar -->
 <div class="navbar" id="navbar">
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
+    <a href="#portfolio">Portfolio</a> — 
+    <a href="#contact">Contact</a> — 
     <a href="#pricing">Pricing</a>
 </div>
 
@@ -122,8 +159,7 @@
     <div class="intro-container">
         <div class="intro-heading">Hi, I'm Sakar Panta</div>
         <div class="intro-text">
-            I am a visual storyteller capturing the essence of moments through photography. 
-            From street photography to captivating portraits, my work aims to narrate compelling stories with each shot.
+            I am a photographer and web designer. I capture moments that tell stories, from street photography to stunning portraits. Let's connect and create something amazing.
         </div>
     </div>
 </div>
@@ -131,18 +167,22 @@
 <!-- Portfolio Section -->
 <div class="content-section" id="portfolio">
     <h2 class="section-heading">My Portfolio</h2>
-    <div class="gallery-grid">
+    <div class="portfolio-grid">
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+            <div class="photo-title">Street Photography</div>
         </div>
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+            <div class="photo-title">Portraits</div>
         </div>
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+            <div class="photo-title">Food Photography</div>
         </div>
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+            <div class="photo-title">Work Shoot</div>
         </div>
     </div>
 </div>
