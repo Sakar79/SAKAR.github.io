@@ -42,11 +42,11 @@
         }
 
         .bgimg {
-            background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-            height: 100vh;
-            background-position: center;
-            background-size: cover;
             position: relative;
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
         }
 
@@ -60,16 +60,19 @@
             background-image: inherit;
             background-size: cover;
             background-position: center;
-            animation: bgZoom 10s infinite ease-in-out;
+            animation: bgMove 10s infinite alternate ease-in-out;
             z-index: -1;
         }
 
-        @keyframes bgZoom {
-            0%, 100% {
-                transform: scale(1);
+        @keyframes bgMove {
+            0% {
+                transform: scale(1) translateY(0);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.05) translateY(-10px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
             }
         }
 
