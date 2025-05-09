@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sakar Panta | Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     body, html {
@@ -88,143 +89,116 @@
     .services h2, .portfolio h2, .contact h2 {
       text-align: center;
       margin-bottom: 20px;
-      font-size: 28px;
-      color: #333;
     }
 
-    .portfolio-item {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 15px;
+    .services .service-item, .portfolio .portfolio-item {
       text-align: center;
-      overflow: hidden;
-      position: relative;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
+      margin: 10px;
     }
 
-    .portfolio-item:hover {
-      transform: scale(1.02);
-    }
-
-    .portfolio-item span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .portfolio-item img {
+    .portfolio .portfolio-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
+      height: auto;
+      transition: transform 0.3s ease;
     }
 
+    .portfolio .portfolio-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .footer .social-icons i {
+      margin: 0 10px;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons i:hover {
+      color: #ddd;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header class="header">
-    <div class="container">
-      <div class="logo">Sakar Panta</div>
-      <nav>
-        <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <div class="logo">Sakar Panta</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero">
+  <section class="hero" id="home">
     <div class="container">
-      <h1>Capturing Moments, Creating Stories</h1>
-      <p>Photography | Web Design | Visual Storytelling</p>
-      <a href="#contact" class="btn">Book Now</a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2>My Services</h2>
-      <div class="service">Photography</div>
-      <div class="service">Web Design</div>
-      <div class="service">Visual Storytelling</div>
+      <h1>Sakar Panta</h1>
+      <p>Photographer & Web Designer</p>
+      <a href="#portfolio" class="btn">View Portfolio</a>
     </div>
   </section>
 
   <!-- Portfolio Section -->
   <section class="portfolio" id="portfolio">
+    <h2>My Portfolio</h2>
     <div class="container">
-      <h2>My Portfolio</h2>
-
-      <a href="street-photography.html" class="portfolio-item">
+      <div class="portfolio-item">
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
-        <span>Street Photography</span>
-      </a>
-
-      <a href="portraits.html" class="portfolio-item">
+        <div class="hover-text">Street Photography</div>
+      </div>
+      <div class="portfolio-item">
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
-        <span>Portraits</span>
-      </a>
-
-      <a href="food-photography.html" class="portfolio-item">
+        <div class="hover-text">Portraits</div>
+      </div>
+      <div class="portfolio-item">
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
-        <span>Food Photography</span>
-      </a>
-
-      <a href="work-shoot.html" class="portfolio-item">
+        <div class="hover-text">Food Photography</div>
+      </div>
+      <div class="portfolio-item">
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
-        <span>Work Shoot</span>
-      </a>
+        <div class="hover-text">Work Shoot</div>
+      </div>
+    </div>
+  </section>
 
-      <a href="photoshop.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
-        <span>Photoshop</span>
-      </a>
-
-      <a href="wildlife-photography.html" class="portfolio-item">
-        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
-        <span>Wildlife Photography</span>
-      </a>
-
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello, I'm Sakar Panta. I am passionate about photography and web design. This website showcases my creative work and allows me to share my journey with you. Feel free to explore my portfolio and learn more about my skills.</p>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
+    <h2>Contact Me</h2>
     <div class="container">
-      <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+      <form action="/submit_form" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heroButton = document.querySelector(".hero .btn");
-      heroButton.addEventListener("click", function () {
-        alert("Thank you for your interest! Please contact me through the form.");
-      });
-    });
-  </script>
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Sakar Panta</p>
+  </footer>
 
 </body>
 </html>
