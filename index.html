@@ -21,97 +21,36 @@
       padding: 20px;
     }
 
-    .header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .header .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .header nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .header nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .hero {
-      background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-      background-size: cover;
-      background-position: center;
-      padding: 80px 0;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero .container {
-      position: relative;
-      top: -40px;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .hero .btn {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .hero .btn:hover {
-      background-color: #555;
-    }
-
-    .services, .portfolio, .contact {
+    .portfolio {
       padding: 50px 0;
       background-color: #fff;
-      margin-bottom: 20px;
     }
 
-    .services h2, .portfolio h2, .contact h2 {
+    .portfolio h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 28px;
       color: #333;
     }
 
-    .service {
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin-bottom: 15px;
-      text-align: center;
-      transition: background-color 0.3s;
-    }
-
-    .service:hover {
-      background-color: #ddd;
-    }
-
     .portfolio-item {
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin-bottom: 15px;
-      text-align: center;
-      transition: background-color 0.3s;
-      overflow: hidden;
       position: relative;
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      background-color: #f4f4f4;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.02);
     }
 
     .portfolio-item img {
@@ -124,127 +63,54 @@
       z-index: -1;
     }
 
-    .contact form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact input, .contact textarea {
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-    }
-
-    .contact .btn {
-      background-color: #333;
+    .portfolio-item span {
+      z-index: 1;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
-      padding: 10px;
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s;
+      padding: 5px 10px;
     }
 
-    .contact .btn:hover {
-      background-color: #555;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">Sakar Panta</div>
-      <nav>
-        <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <h1>Capturing Moments, Creating Stories</h1>
-      <p>Photography | Web Design | Visual Storytelling</p>
-      <a href="#contact" class="btn">Book Now</a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2>My Services</h2>
-      <div class="service">Photography</div>
-      <div class="service">Web Design</div>
-      <div class="service">Visual Storytelling</div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
   <section class="portfolio" id="portfolio">
     <div class="container">
       <h2>My Portfolio</h2>
-      
+
       <a href="street-photography.html" class="portfolio-item">
-        Street Photography
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+        <span>Street Photography</span>
       </a>
 
       <a href="portraits.html" class="portfolio-item">
-        Portraits
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+        <span>Portraits</span>
       </a>
 
       <a href="food-photography.html" class="portfolio-item">
-        Food Photography
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+        <span>Food Photography</span>
       </a>
 
       <a href="work-shoot.html" class="portfolio-item">
-        Work Shoot
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+        <span>Work Shoot</span>
       </a>
 
       <a href="photoshop.html" class="portfolio-item">
-        Photoshop
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
+        <span>Photoshop</span>
       </a>
 
       <a href="wildlife-photography.html" class="portfolio-item">
-        Wildlife Photography
         <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
+        <span>Wildlife Photography</span>
       </a>
-      
+
     </div>
   </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const heroButton = document.querySelector(".hero .btn");
-      heroButton.addEventListener("click", function () {
-        alert("Thank you for your interest! Please contact me through the form.");
-      });
-    });
-  </script>
 
 </body>
 </html>
