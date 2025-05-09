@@ -31,7 +31,7 @@
         .navbar a {
             color: white;
             text-decoration: none;
-            margin: 0 30px;
+            margin: 0 25px;
             font-size: 16px;
             padding: 8px 16px;
             transition: font-weight 0.3s, background-color 0.3s;
@@ -73,7 +73,7 @@
         }
 
         .intro-heading {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             margin-bottom: 15px;
         }
@@ -84,28 +84,27 @@
         }
 
         .content-section {
-            padding: 100px 10%;
+            padding: 80px 5%;
             text-align: center;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            padding: 40px 0;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .photo-container {
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s, opacity 0.4s;
         }
 
         .photo-container img {
             width: 100%;
             height: auto;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s;
         }
 
         .photo-title {
@@ -117,7 +116,7 @@
             font-weight: 600;
             font-size: 18px;
             opacity: 0;
-            transition: opacity 0.4s;
+            transition: opacity 0.3s;
         }
 
         .photo-container:hover .photo-title {
@@ -125,41 +124,43 @@
         }
 
         .section-heading {
-            font-size: 30px;
+            font-size: 28px;
             margin-bottom: 40px;
             color: #333;
         }
 
-        @media (max-width: 1200px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 30px;
+        @media (max-width: 1024px) {
+            .intro-container {
+                width: 80%;
+                top: 35%;
             }
 
-            .intro-container {
-                width: 70%;
-                top: 35%;
+            .intro-heading {
+                font-size: 26px;
+            }
+
+            .intro-text {
+                font-size: 16px;
             }
         }
 
         @media (max-width: 768px) {
             .navbar a {
-                margin: 0 15px;
+                margin: 0 10px;
                 font-size: 14px;
             }
 
             .intro-container {
-                width: 85%;
+                width: 90%;
                 padding: 20px;
-                top: 40%;
             }
 
             .intro-heading {
-                font-size: 28px;
+                font-size: 22px;
             }
 
             .intro-text {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .portfolio-grid {
@@ -183,7 +184,7 @@
     <div class="intro-container">
         <div class="intro-heading">Hi, I'm Sakar Panta</div>
         <div class="intro-text">
-            Photographer & Web Designer. Capturing moments that tell stories. Let's create something amazing together.
+            Photographer and web designer. Capturing moments that tell stories. Let's connect and create something amazing.
         </div>
     </div>
 </div>
@@ -239,7 +240,7 @@
         photos.forEach(photo => {
             const rect = photo.getBoundingClientRect();
             const distance = Math.abs(rect.top - windowHeight / 2);
-            const scale = 1 - (distance / windowHeight) * 0.2;
+            const scale = 1 - distance / windowHeight * 0.3;
             photo.style.transform = `scale(${Math.max(scale, 0.85)})`;
         });
     });
