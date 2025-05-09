@@ -62,12 +62,8 @@
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 36px;
       margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 20px;
     }
 
     .hero .btn {
@@ -83,104 +79,54 @@
       background-color: #555;
     }
 
-    .portfolio {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-
-    .portfolio-item {
-      width: 30%;
-      position: relative;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .pricing, .contact {
+    .services, .portfolio, .contact {
       padding: 50px 0;
       background-color: #fff;
       margin-bottom: 20px;
     }
 
-    .pricing h2, .contact h2 {
+    .services h2, .portfolio h2, .contact h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 28px;
       color: #333;
     }
 
-    .pricing-grid {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .pricing-item {
-      width: 300px;
-      padding: 20px;
-      background-color: #f4f4f4;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .pricing-item h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .pricing-item .price {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .pricing-item .btn {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .pricing-item .btn:hover {
-      background-color: #555;
-    }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .portfolio-item {
       width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .contact input, .contact textarea, .contact button {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .contact button {
-      background-color: #333;
+      height: 150px;
+      margin-bottom: 15px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
       color: #fff;
+      font-size: 20px;
       font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
     }
 
-    .contact button:hover {
-      background-color: #555;
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
+
+    .portfolio-item span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
 
   </style>
@@ -193,7 +139,9 @@
       <div class="logo">Sakar Panta</div>
       <nav>
         <a href="#hero">Home</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -202,53 +150,57 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="container">
-      <h1>SAKAR PANTA</h1>
-      <p>Photographer and Web Designer.</p>
-      <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/Artboard%201.pdf" download="S_Panta_Resume.pdf" class="btn">Download Resume</a>
+      <h1>Capturing Moments, Creating Stories</h1>
+      <p>Photography | Web Design | Visual Storytelling</p>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>My Services</h2>
+      <div class="service">Photography</div>
+      <div class="service">Web Design</div>
+      <div class="service">Visual Storytelling</div>
     </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section class="portfolio">
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2919.jpeg" alt="Portfolio 1">
-    </div>
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2941.jpeg" alt="Portfolio 2">
-    </div>
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_2950.jpeg" alt="Portfolio 3">
-    </div>
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg" alt="Portfolio 4">
-    </div>
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3108.jpeg" alt="Portfolio 5">
-    </div>
-    <div class="portfolio-item">
-      <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3137.jpeg" alt="Portfolio 6">
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
+  <section class="portfolio" id="portfolio">
     <div class="container">
-      <h2>My Pricing</h2>
-      <div class="pricing-grid">
-        <div class="pricing-item">
-          <h3>Basic</h3>
-          <p>Web Design | Photography | 5GB Storage | Mail Support</p>
-          <div class="price">$10 / month</div>
-          <a href="#" class="btn">Sign Up</a>
-        </div>
+      <h2>My Portfolio</h2>
 
-        <div class="pricing-item">
-          <h3>Pro</h3>
-          <p>Web Design | Photography | 50GB Storage | Endless Support</p>
-          <div class="price">$25 / month</div>
-          <a href="#" class="btn">Sign Up</a>
-        </div>
-      </div>
+      <a href="street-photography.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
+        <span>Street Photography</span>
+      </a>
+
+      <a href="portraits.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
+        <span>Portraits</span>
+      </a>
+
+      <a href="food-photography.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
+        <span>Food Photography</span>
+      </a>
+
+      <a href="work-shoot.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
+        <span>Work Shoot</span>
+      </a>
+
+      <a href="photoshop.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
+        <span>Photoshop</span>
+      </a>
+
+      <a href="wildlife-photography.html" class="portfolio-item">
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
+        <span>Wildlife Photography</span>
+      </a>
+
     </div>
   </section>
 
@@ -256,15 +208,23 @@
   <section class="contact" id="contact">
     <div class="container">
       <h2>Contact Me</h2>
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroButton = document.querySelector(".hero .btn");
+      heroButton.addEventListener("click", function () {
+        alert("Thank you for your interest! Please contact me through the form.");
+      });
+    });
+  </script>
 
 </body>
 </html>
