@@ -126,12 +126,45 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            .navbar a {
-                margin: 0 10px;
-                font-size: 14px;
-            }
+        .pricing, .contact {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
 
+        .pricing h2, .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .pricing .price-item, .contact form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .contact .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact .btn:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 768px) {
             .intro-container {
                 width: 95%;
                 padding: 15px;
@@ -168,7 +201,7 @@
 
 <!-- Portfolio Section -->
 <div class="content-section" id="portfolio">
-    <h2 class="section-heading">My Portfolio</h2>
+    <h2>My Portfolio</h2>
     <div class="portfolio-grid">
         <div class="photo-container">
             <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
@@ -188,6 +221,24 @@
         </div>
     </div>
 </div>
+
+<!-- Pricing Section -->
+<section class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <div class="price-item">Basic Package: $10/month</div>
+    <div class="price-item">Premium Package: $25/month</div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
 
 <script>
     // Navbar Scroll Effect
