@@ -1,279 +1,208 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SAKAR'S PORTFOLIO</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+<head>
+  <title>SAKAR PANTA - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Poppins:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
     .w3-row-padding img {margin-bottom: 12px}
     .bgimg {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-      min-height: 100%;
-      position: fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100vh;
+      position: relative;
+      z-index: -1;
+    }
+    .bgimg::after {
+      content: '';
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      background: rgba(0, 0, 0, 0.3);
       z-index: -1;
-      transition: transform 0.3s ease-out;
+      transition: transform 0.7s ease;
     }
-
-    /* Parallax effect */
-    .bgimg {
-      transform: translateY(0);
-      transition: transform 0.3s ease-out;
+    .bgimg.scrolled::after {
+      transform: scale(1.1);
     }
-
-    .w3-main {
-      margin-left: 40%;
-      transition: margin-left 0.5s ease-out;
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      background-color: #333;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    /* Spacing for navigation links */
-    .w3-bar-item {
-      margin-right: 20px;
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      font-weight: 600;
     }
-
-    /* Cool font for portfolio */
-    #portfolio h2 {
+    .navbar a:hover {
+      background-color: #555;
+      border-radius: 4px;
+    }
+    .portfolio-title {
       font-family: "Poppins", sans-serif;
-      font-weight: bold;
+      font-size: 36px;
+      font-weight: 600;
+      color: #333;
     }
-
     .photo-container {
       position: relative;
-      cursor: pointer;
       overflow: hidden;
       margin-bottom: 16px;
-      transition: box-shadow 0.3s;
+      transition: transform 0.3s;
     }
-
     .photo-container img {
       width: 100%;
       transition: transform 0.3s;
     }
-
     .photo-container:hover img {
-      transform: scale(1.02);
+      transform: scale(1.05);
     }
-
     .hover-text {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 22px;
-      font-weight: bold;
-      color: white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 18px;
       text-align: center;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-      opacity: 0;
-      pointer-events: none;
       transition: opacity 0.3s;
-      line-height: 1.2;
+      opacity: 0;
     }
-
     .photo-container:hover .hover-text {
       opacity: 1;
     }
-
-    .photo-container.active .hover-text {
-      opacity: 1;
+    .pricing-container {
+      background-color: #f1f1f1;
+      padding: 64px 0;
     }
-
-    @media (max-width: 768px) {
-      .hover-text {
-        font-size: 18px;
-      }
+    .pricing-card {
+      background-color: #333;
+      color: #fff;
+      padding: 32px;
+      margin: 16px;
+      text-align: center;
     }
-
-    .w3-light-grey {
-      background-color: #f0f0f0 !important;
+    .pricing-card.premium {
+      background-color: #444;
+      color: #fff;
     }
-
-    /* Fix for premium package text */
-    .w3-black .w3-xlarge {
-      color: #fff !important;
+    .pricing-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
     }
-
-    /* Adjust font color for pricing package */
-    .w3-light-grey .w3-padding-16 h2 {
-      color: #000;
+    .contact-container {
+      padding: 64px;
+      background-color: #f1f1f1;
     }
+  </style>
+</head>
+<body>
 
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-      .w3-main {
-        margin-left: 0;
-      }
+<!-- Navbar -->
+<div class="navbar">
+  <div>SAKAR PANTA</div>
+  <div>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
 
-      .w3-sidebar {
-        width: 100%;
-      }
-    }
-    </style>
-  </head>
-  <body>
+<!-- Background Section -->
+<div class="bgimg"></div>
 
-  <!-- Sidebar with image -->
-  <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-    <div class="bgimg"></div>
-  </nav>
-
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="#home" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-      <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+<!-- Portfolio Section -->
+<div class="w3-container w3-padding-64" id="portfolio">
+  <h2 class="portfolio-title">My Portfolio</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <a href="street-photography.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg">
+          <div class="hover-text">Street Photography</div>
+        </div>
+      </a>
     </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large" style="margin-left:40%">
-
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>SAKAR PANTA</b></h1>
-      <p>Photographer and Web Designer.</p>
-      <img src="https://github.com/Sakar79/SAKAR.github.io/blob/main/DSC_3002.jpeg?raw=true" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="https://github.com/Sakar79/SAKAR.github.io/blob/main/DSC_3002.jpeg?raw=true" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-    </header>
-
-    <!-- Portfolio Section -->
-    <div class="w3-padding-32 w3-content" id="portfolio">
-      <h2 class="w3-text-grey">My Portfolio</h2>
-      <hr class="w3-opacity">
-
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-          <!-- First Photo: Street Photography -->
-          <a href="street-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
-              <div class="hover-text"><span>Street Photography</span></div>
-            </div>
-          </a>
-
-          <!-- Second Photo: Portraits -->
-          <a href="portraits.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
-              <div class="hover-text">Portraits</div>
-            </div>
-          </a>
-
-          <!-- Third Photo: Food Photography -->
-          <a href="food-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
-              <div class="hover-text"><span>Food Photography</span></div>
-            </div>
-          </a>
+    <div class="w3-third">
+      <a href="portraits.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg">
+          <div class="hover-text">Portraits</div>
         </div>
-
-        <div class="w3-half">
-          <!-- Fourth Photo: Work Shoot -->
-          <a href="work-shoot.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
-              <div class="hover-text"><span>Work Shoot</span></div>
-            </div>
-          </a>
-
-          <!-- Fifth Photo: Photoshop -->
-          <a href="photoshop.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
-              <div class="hover-text">Photoshop</div>
-            </div>
-          </a>
-
-          <!-- Sixth Photo: Wildlife Photography -->
-          <a href="wildlife-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow
-
-">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_9283.jpg" style="width:100%">
-              <div class="hover-text"><span>Wildlife Photography</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
+      </a>
     </div>
-
-    <!-- Pricing and Contact Section -->
-    <div id="pricing" class="w3-container w3-light-grey w3-padding-64">
-      <h2>Pricing</h2>
-      <div class="w3-row">
-        <div class="w3-quarter w3-margin-top">
-          <div class="w3-card w3-black w3-hover-opacity w3-padding">
-            <h2 class="w3-xlarge">Basic</h2>
-            <h3>$50</h3>
-            <p>Basic Photography Package</p>
-            <p>10 Images</p>
-            <p>1 Hour Session</p>
-            <p>Basic Editing</p>
-            <button class="w3-button w3-black">Book Now</button>
-          </div>
+    <div class="w3-third">
+      <a href="food-photography.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg">
+          <div class="hover-text">Food Photography</div>
         </div>
-
-        <div class="w3-quarter w3-margin-top">
-          <div class="w3-card w3-black w3-hover-opacity w3-padding">
-            <h2 class="w3-xlarge">Pro</h2>
-            <h3>$150</h3>
-            <p>Professional Photography Package</p>
-            <p>25 Images</p>
-            <p>2 Hour Session</p>
-            <p>Advanced Editing</p>
-            <button class="w3-button w3-black">Book Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="w3-container w3-padding-64" id="contact">
-      <h2>Contact</h2>
-      <p>If you have any questions or want to book a session, feel free to reach out!</p>
-      <form>
-        <input class="w3-input" type="text" placeholder="Your Name" required><br>
-        <input class="w3-input" type="email" placeholder="Your Email" required><br>
-        <textarea class="w3-input" placeholder="Your Message" required></textarea><br>
-        <button class="w3-button w3-black">Send</button>
-      </form>
+      </a>
     </div>
   </div>
+</div>
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("mySidebar").style.display = "block";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
+<!-- Pricing Section -->
+<div class="pricing-container" id="pricing">
+  <h2>Pricing</h2>
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <div class="pricing-card">
+        <h3>Basic Package</h3>
+        <p>$50</p>
+        <p>10 Images</p>
+        <p>1 Hour Session</p>
+        <button class="w3-button w3-black">Book Now</button>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="pricing-card premium">
+        <h3>Pro Package</h3>
+        <p>$150</p>
+        <p>25 Images</p>
+        <p>2 Hour Session</p>
+        <button class="w3-button w3-black">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    // Add scroll event for the parallax effect
-    window.addEventListener("scroll", function() {
-      const bgimg = document.querySelector('.bgimg');
-      const scrollPosition = window.pageYOffset;
-      bgimg.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
-    });
-  </script>
-  </body>
+<!-- Contact Section -->
+<div class="contact-container" id="contact">
+  <h2>Contact Me</h2>
+  <p>For bookings or inquiries, feel free to reach out:</p>
+  <form>
+    <input class="w3-input w3-margin-bottom" type="text" placeholder="Your Name" required>
+    <input class="w3-input w3-margin-bottom" type="email" placeholder="Your Email" required>
+    <textarea class="w3-input w3-margin-bottom" placeholder="Your Message" required></textarea>
+    <button class="w3-button w3-black">Send</button>
+  </form>
+</div>
+
+<script>
+  // Parallax Background Animation
+  window.addEventListener("scroll", function () {
+    const bgimg = document.querySelector('.bgimg');
+    const scrollPosition = window.pageYOffset;
+    bgimg.classList.toggle('scrolled', scrollPosition > 100);
+  });
+</script>
+
+</body>
 </html>
