@@ -92,21 +92,36 @@
       color: #333;
     }
 
-    .portfolio-item {
+    .service {
       background-color: #f4f4f4;
-      padding: 40px;
+      padding: 20px;
       margin-bottom: 15px;
       text-align: center;
       transition: background-color 0.3s;
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
     }
 
-    .portfolio-item:hover {
+    .service:hover {
       background-color: #ddd;
+    }
+
+    .portfolio-item {
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 15px;
+      text-align: center;
+      transition: background-color 0.3s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .contact form {
@@ -176,29 +191,36 @@
     <div class="container">
       <h2>My Portfolio</h2>
       
-      <a href="street-photography.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg');">
+      <a href="street-photography.html" class="portfolio-item">
         Street Photography
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" alt="Street Photography">
       </a>
 
-      <a href="portraits.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg');">
+      <a href="portraits.html" class="portfolio-item">
         Portraits
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" alt="Portraits">
       </a>
 
-      <a href="food-photography.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg');">
+      <a href="food-photography.html" class="portfolio-item">
         Food Photography
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" alt="Food Photography">
       </a>
 
-      <a href="work-shoot.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg');">
+      <a href="work-shoot.html" class="portfolio-item">
         Work Shoot
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" alt="Work Shoot">
       </a>
 
-      <a href="photoshop.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg');">
+      <a href="photoshop.html" class="portfolio-item">
         Photoshop
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" alt="Photoshop">
       </a>
 
-      <a href="wildlife-photography.html" class="portfolio-item" style="background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg');">
+      <a href="wildlife-photography.html" class="portfolio-item">
         Wildlife Photography
+        <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" alt="Wildlife Photography">
       </a>
+      
     </div>
   </section>
 
