@@ -47,6 +47,31 @@
             background-position: center;
             background-size: cover;
             position: relative;
+            overflow: hidden;
+        }
+
+        .bgimg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            transform-origin: center;
+            animation: zoomInOut 15s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .intro-container {
