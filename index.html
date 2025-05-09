@@ -1,249 +1,231 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>SAKAR'S PORTFOLIO</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      body, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat", sans-serif }
-      .w3-row-padding img { margin-bottom: 12px }
-      .bgimg {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
-        min-height: 100%;
-      }
-    </style>
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakar Panta - Photographer & Web Designer</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Sidebar with image -->
-  <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-    <div class="bgimg"></div>
-  </nav>
+    .sidebar {
+      width: 300px;
+      background-color: #333;
+      position: fixed;
+      height: 100%;
+      padding-top: 50px;
+      color: #fff;
+      text-align: center;
+    }
 
-  <!-- Hidden Sidebar (reveals when clicked on menu icon)-->
-  <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-      <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
-      <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
-    </div>
-  </nav>
+    .sidebar img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
 
-  <!-- Page Content -->
-  <div class="w3-main w3-padding-large" style="margin-left:40%">
+    .sidebar a {
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+    }
 
-    <!-- Menu icon to open sidebar -->
-    <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+    .sidebar a:hover {
+      background-color: #575757;
+    }
 
-    <!-- Header -->
-    <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-      <h1 class="w3-jumbo"><b>SAKAR PANTA</b></h1>
-      <p>Photographer and Web Designer.</p>
+    .content {
+      margin-left: 300px;
+      padding: 20px;
+    }
 
-      <img src="https://github.com/Sakar79/SAKAR.github.io/blob/main/DSC_3002.jpeg?raw=true" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-      <img src="https://github.com/Sakar79/SAKAR.github.io/blob/main/DSC_3002.jpeg?raw=true" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    .hero {
+      background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 150px 20px;
+      text-align: center;
+      color: #fff;
+    }
 
-      <a href="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/Artboard%201.pdf" download="S_Panta_Resume.pdf">
-        <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-          <i class="fa fa-download"></i> Download Resume
-        </button>
-      </a>
-    </header>
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
 
-    <!-- Portfolio Section -->
-    <div class="w3-padding-32 w3-content" id="portfolio">
-      <h2 class="w3-text-grey">My Portfolio</h2>
-      <hr class="w3-opacity">
+    .section {
+      padding: 80px 20px;
+    }
 
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-          <a href="street-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/IMG_0288%202.jpg" style="width:100%">
-              <div class="hover-text"><span>Street</span><br><span>Photography</span></div>
-            </div>
-          </a>
+    .section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-          <a href="portraits.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_7860.jpeg" style="width:100%">
-              <div class="hover-text">Portraits</div>
-            </div>
-          </a>
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
 
-          <a href="food-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_0790.jpg" style="width:100%">
-              <div class="hover-text"><span>Food</span><br><span>Photography</span></div>
-            </div>
-          </a>
-        </div>
+    .portfolio-item {
+      flex: 1 1 calc(33.333% - 16px);
+      background-color: #f1f1f1;
+      padding: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
 
-        <div class="w3-half">
-          <a href="work-shoot.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg" style="width:100%">
-              <div class="hover-text"><span>Work</span><br><span>Shoot</span></div>
-            </div>
-          </a>
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
 
-          <a href="photoshop.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg" style="width:100%">
-              <div class="hover-text">Photoshop</div>
-            </div>
-          </a>
+    .pricing-table {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
 
-          <a href="wildlife-photography.html" class="photo-link">
-            <div class="photo-container w3-card w3-hover-shadow">
-              <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg" style="width:100%">
-              <div class="hover-text"><span>Wildlife</span><br><span>Photography</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    .pricing-card {
+      background-color: #f1f1f1;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      border-radius: 8px;
+    }
 
-    <style>
-      .photo-container {
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-        margin-bottom: 16px;
-        transition: box-shadow 0.3s;
-      }
+    .pricing-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-      .photo-container img {
-        width: 100%;
-        transition: transform 0.3s;
-      }
+    .pricing-card .price {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-      .photo-container:hover img {
-        transform: scale(1.02);
-      }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-      .hover-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 22px;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s;
-        line-height: 1.2;
-      }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
-      .photo-container:hover .hover-text {
-        opacity: 1;
-      }
-
-      .photo-container.active .hover-text {
-        opacity: 1;
-      }
-
-      @media (max-width: 768px) {
-        .hover-text {
-          font-size: 18px;
-        }
-      }
-    </style>
-
-    <script>
-      function toggleText(container) {
-        const isActive = container.classList.contains("active");
-
-        document.querySelectorAll(".photo-container").forEach(item => {
-          item.classList.remove("active");
-        });
-
-        if (!isActive) {
-          container.classList.add("active");
-        }
-      }
-    </script>
-
-    <!-- Price Section (Add this in your code) -->
-    <div class="w3-padding-32 w3-content w3-text-grey" id="price">
-      <h2>My Price</h2>
-      <hr class="w3-opacity">
-
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-            <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">5GB Storage</li>
-            <li class="w3-padding-16">Mail Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 10</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-
-        <div class="w3-half">
-          <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">50GB Storage</li>
-            <li class="w3-padding-16">Endless Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 25</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- End Price Section -->
-
-    <!-- Contact Section -->
-    <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
-      <h2>Contact Me</h2>
-      <hr class="w3-opacity">
-      
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>Melbourne, AUSTRALIA</p>
-        <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: (+61) 408 824 474</p>
-        <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> Email: sakarpanta23@gmail.com</p>
-      </div>
-    </div>
-
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg" alt="Sakar Panta">
+    <h2>Sakar Panta</h2>
+    <p>Photographer & Web Designer</p>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <script>
-    function openNav() {
-      document.getElementById("mySidebar").style.display = "block";
-    }
+  <!-- Main Content -->
+  <div class="content">
 
-    function closeNav() {
-      document.getElementById("mySidebar").style.display = "none";
-    }
-  </script>
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+      <h1>Sakar Panta</h1>
+      <p>Turning Moments into Memories</p>
+    </div>
 
-  </body>
+    <!-- About Section -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        I am Sakar Panta, a passionate photographer and web designer based in Melbourne, Australia. 
+        From capturing fleeting moments to creating visually compelling websites, I combine creativity with functionality.
+      </p>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="section" id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">Street Photography</div>
+        <div class="portfolio-item">Portraits</div>
+        <div class="portfolio-item">Food Photography</div>
+        <div class="portfolio-item">Work Shoot</div>
+        <div class="portfolio-item">Photoshop Art</div>
+        <div class="portfolio-item">Wildlife Photography</div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section" id="services">
+      <h2>Services</h2>
+      <p>Photography, Web Design, Photoshop, and more.</p>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="section" id="pricing">
+      <h2>Pricing</h2>
+      <div class="pricing-table">
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <p class="price">$10/month</p>
+          <p>Photography</p>
+          <p>5GB Storage</p>
+          <p>Mail Support</p>
+          <button>Sign Up</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <p class="price">$25/month</p>
+          <p>Photography & Web Design</p>
+          <p>50GB Storage</p>
+          <p>Endless Support</p>
+          <button>Sign Up</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-form">
+        <form action="/submit" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required><br>
+          <input type="email" name="email" placeholder="Your Email" required><br>
+          <textarea name="message" placeholder="Your Message" required></textarea><br>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 Sakar Panta. All rights reserved.</p>
+    <div>
+      <a href="#"><i class="fa fa-facebook-official"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</body>
 </html>
