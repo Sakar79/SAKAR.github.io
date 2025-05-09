@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Sakar Panta | Photographer & Web Designer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
       background-color: #121212;
       color: #fff;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .container {
@@ -34,7 +35,7 @@
       animation: fadeInDown 1s ease;
     }
 
-    .header .logo {
+    .logo {
       font-size: 24px;
       font-weight: 600;
       letter-spacing: 1px;
@@ -79,12 +80,12 @@
     }
 
     .hero h1 {
-      font-size: 64px;
+      font-size: 56px;
       animation: fadeInUp 1.2s ease;
     }
 
     .hero p {
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 30px;
       animation: fadeInUp 1.5s ease;
     }
@@ -111,14 +112,14 @@
 
     .section h2 {
       text-align: center;
-      font-size: 48px;
+      font-size: 42px;
       color: #ff005c;
       margin-bottom: 50px;
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
     }
 
@@ -128,17 +129,19 @@
       background-color: #333;
       cursor: pointer;
       transition: transform 0.4s;
+      animation: slideInUp 1s ease;
     }
 
     .portfolio-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
+      transition: transform 0.6s;
+      animation: float 4s ease-in-out infinite;
     }
 
     .portfolio-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.05) rotate(1deg);
     }
 
     .portfolio-item .overlay {
@@ -182,14 +185,37 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     @keyframes zoomIn {
       from { transform: scale(1.1); }
       to { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero .btn {
+        padding: 10px 30px;
+        font-size: 16px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header nav a {
+        padding: 8px 12px;
+      }
     }
   </style>
 </head>
