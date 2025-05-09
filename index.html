@@ -9,32 +9,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {margin-bottom: 12px}
     .bgimg {
       background-image: url('https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_3002.jpeg');
       background-size: cover;
-      background-attachment: fixed;
+      background-position: center;
       height: 100vh;
       position: relative;
       z-index: -1;
+      transition: transform 0.5s ease;
     }
-    .bgimg::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: -1;
-      transition: transform 0.7s ease;
+    .bgimg.scrolled {
+      transform: scale(1.05);
     }
-    .bgimg.scrolled::after {
-      transform: scale(1.1);
-    }
+
     .navbar {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 16px;
       background-color: #333;
       color: #fff;
@@ -42,73 +33,100 @@
       top: 0;
       z-index: 1000;
     }
-    .navbar a {
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .navbar-links a {
       color: #fff;
       text-decoration: none;
       padding: 8px 16px;
       font-weight: 600;
     }
-    .navbar a:hover {
+
+    .navbar-links a:hover {
       background-color: #555;
       border-radius: 4px;
     }
+
     .portfolio-title {
       font-family: "Poppins", sans-serif;
       font-size: 36px;
       font-weight: 600;
       color: #333;
+      text-align: center;
+      margin-bottom: 24px;
     }
+
     .photo-container {
       position: relative;
       overflow: hidden;
       margin-bottom: 16px;
       transition: transform 0.3s;
+      cursor: pointer;
     }
+
     .photo-container img {
       width: 100%;
       transition: transform 0.3s;
     }
+
     .photo-container:hover img {
       transform: scale(1.05);
     }
+
     .hover-text {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 8px;
-      background-color: rgba(0, 0, 0, 0.6);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-weight: bold;
       color: #fff;
-      font-size: 18px;
-      text-align: center;
-      transition: opacity 0.3s;
-      opacity: 0;
-    }
-    .photo-container:hover .hover-text {
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
       opacity: 1;
+      pointer-events: none;
     }
+
     .pricing-container {
       background-color: #f1f1f1;
       padding: 64px 0;
     }
+
     .pricing-card {
       background-color: #333;
       color: #fff;
       padding: 32px;
       margin: 16px;
       text-align: center;
+      transition: background-color 0.3s;
     }
+
     .pricing-card.premium {
       background-color: #444;
       color: #fff;
     }
-    .pricing-card h3 {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
+
     .contact-container {
       padding: 64px;
       background-color: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-links {
+        gap: 12px;
+      }
+
+      .portfolio-title {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -116,8 +134,8 @@
 
 <!-- Navbar -->
 <div class="navbar">
-  <div>SAKAR PANTA</div>
-  <div>
+  <div class="logo">SAKAR PANTA</div>
+  <div class="navbar-links">
     <a href="#portfolio">Portfolio</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
@@ -156,27 +174,50 @@
       </a>
     </div>
   </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <a href="work-shoot.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/img20240827_14315761-copy.jpg">
+          <div class="hover-text">Work Shoot</div>
+        </div>
+      </a>
+    </div>
+    <div class="w3-third">
+      <a href="photoshop.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/DSC_1940-2.jpg">
+          <div class="hover-text">Photoshop</div>
+        </div>
+      </a>
+    </div>
+    <div class="w3-third">
+      <a href="wildlife-photography.html">
+        <div class="photo-container">
+          <img src="https://raw.githubusercontent.com/Sakar79/SAKAR.github.io/main/1111.jpg">
+          <div class="hover-text">Wildlife Photography</div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- Pricing Section -->
 <div class="pricing-container" id="pricing">
   <h2>Pricing</h2>
   <div class="w3-row-padding">
-    <div class="w3-third">
+    <div class="w3-half">
       <div class="pricing-card">
         <h3>Basic Package</h3>
-        <p>$50</p>
-        <p>10 Images</p>
-        <p>1 Hour Session</p>
+        <p>$50 - 10 Images - 1 Hour Session</p>
         <button class="w3-button w3-black">Book Now</button>
       </div>
     </div>
-    <div class="w3-third">
+    <div class="w3-half">
       <div class="pricing-card premium">
         <h3>Pro Package</h3>
-        <p>$150</p>
-        <p>25 Images</p>
-        <p>2 Hour Session</p>
+        <p>$150 - 25 Images - 2 Hour Session</p>
         <button class="w3-button w3-black">Book Now</button>
       </div>
     </div>
@@ -196,11 +237,13 @@
 </div>
 
 <script>
-  // Parallax Background Animation
   window.addEventListener("scroll", function () {
     const bgimg = document.querySelector('.bgimg');
-    const scrollPosition = window.pageYOffset;
-    bgimg.classList.toggle('scrolled', scrollPosition > 100);
+    if (window.scrollY > 100) {
+      bgimg.classList.add('scrolled');
+    } else {
+      bgimg.classList.remove('scrolled');
+    }
   });
 </script>
 
